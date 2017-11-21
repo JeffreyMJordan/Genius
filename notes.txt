@@ -1,0 +1,15 @@
+make a sessions button component, tell it to render certain things based on whether the person is logged in or not 
+
+CSS:
+  Maybe make the html component first then convert it to JSX
+  Don't independently style everything 
+  rails just requires everything that's in the stylesheets directory 
+
+
+Handle different pages with routes in your App component 
+
+MVP stuff 
+  In the frontend folder, there is an MVP checklist for different projects 
+
+Create an issue for each MVP 
+  Have it be a PA review and the name of the issue

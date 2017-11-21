@@ -10,8 +10,18 @@ document.addEventListener('DOMContentLoaded', () => {
   window.login = login;
   window.logout = logout;
   window.signup = signup;
-  const store = configureStore();
+  let store = undefined;
+
+  if(window.currentUser){
+    const preloadedState = {session: {currentUser: window.currentUser} };
+    store = configureStore(preloadedState);
+  }else{
+    store = configureStore();
+  }
+
+
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+
   ReactDOM.render(<Root store={store}/>, root);
 });
