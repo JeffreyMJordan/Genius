@@ -18,7 +18,7 @@ export const login = (user) => (dispatch) => {
     .then((returnedUser) => dispatch(receiveCurrentUser(returnedUser)));
 };
 
-export const loguot = () => (dispatch) => {
+export const logout = () => (dispatch) => {
   return SessionAPIUtil.logout()
     .then(() => dispatch(receiveCurrentUser(null)));
 };
