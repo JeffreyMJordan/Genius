@@ -1,7 +1,8 @@
 class Song < ApplicationRecord
   validates :title, :creator_id, :lyrics, presence: true 
   validates :title, uniqueness: true
-
+  attr_reader :album 
+  attr_reader :artist
 
   belongs_to :creator,
     primary_key: :id,
@@ -17,6 +18,16 @@ class Song < ApplicationRecord
     primary_key: :id,
     foreign_key: :album_id,
     class_name: 'Album'
+
+  def album=(album)
+    @album = Album.find_by_title(album)
+    self.album_id = @album.id 
+  end
+
+  def artist=(artist)
+    @artist = Artist.find_by_name(artist)
+    self.artist_id = @artist.id 
+  end
 
 
 end
