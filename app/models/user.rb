@@ -5,6 +5,12 @@ class User < ApplicationRecord
   attr_reader :password 
   after_initialize :ensure_session_token 
 
+  has_many(:songs,
+    primary_key: :id,
+    foreign_key: :creator_id,
+    class_name: 'Song'
+  )
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
