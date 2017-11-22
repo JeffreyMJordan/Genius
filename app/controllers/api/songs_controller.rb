@@ -9,6 +9,8 @@ class Api::SongsController < ApplicationController
     end
   end
 
+  #Maybe add logic for fetching artists, albums, etc. 
+  #Then on frontend, add 3 actions for different payload parts 
   def index 
     @songs = Song.all 
     render :index

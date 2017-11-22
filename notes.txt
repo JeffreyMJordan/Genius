@@ -13,3 +13,8 @@ MVP stuff
 
 Create an issue for each MVP 
   Have it be a PA review and the name of the issue
+
+
+How to handle song index items 
+  Maybe make it a song index item container 
+  Maybe pass it down through the props
