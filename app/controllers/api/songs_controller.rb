@@ -23,8 +23,7 @@ class Api::SongsController < ApplicationController
     @song = Song.find_by_id(params[:id])
     if @song 
       @song.destroy
-      @songs = Song.all
-      render :index
+      render :show
     else 
       render json: ["That song doesn't exist"], status: 422
     end
