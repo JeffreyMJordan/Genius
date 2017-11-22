@@ -4,8 +4,9 @@ import {merge} from "lodash";
 
 export default (state=[], action) => {
   Object.freeze(state);
+  console.log(action);
   switch(action.type){
-
+    
     case RECEIVE_CURRENT_USER: 
       return merge({}, {errors: null});
     case RECEIVE_SESSION_ERRORS:

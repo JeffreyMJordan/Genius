@@ -8,18 +8,28 @@ export const receiveCurrentUser = (currentUser) => {
   currentUser};
 };
 
+export const receiveSessionErrors = (errors) => {
+  return {
+    type: RECEIVE_SESSION_ERRORS,
+    errors
+  };
+};
+
 export const signup = (user) => (dispatch) => {
   return SessionAPIUtil.signup(user)
-    .then((returnedUser) => dispatch(receiveCurrentUser(returnedUser)));
+    .then((returnedUser) => dispatch(receiveCurrentUser(returnedUser)),
+    (errors) => dispatch(receiveSessionErrors(errors.responseJSON)));
 };
 
 export const login = (user) => (dispatch) => {
   return SessionAPIUtil.login(user)
-    .then((returnedUser) => dispatch(receiveCurrentUser(returnedUser)));
+    .then((returnedUser) => dispatch(receiveCurrentUser(returnedUser)),
+    (errors) => dispatch(receiveSessionErrors(errors.responseJSON)));
 };
 
 export const logout = () => (dispatch) => {
   return SessionAPIUtil.logout()
-    .then(() => dispatch(receiveCurrentUser(null)));
+    .then(() => dispatch(receiveCurrentUser(null)),
+    (errors) => dispatch(receiveSessionErrors(errors.responseJSON)));
 };
 
