@@ -13,7 +13,6 @@ const App = () => (
   <div>
     <HeaderContainer />
 
-
     <Route path="/songs/:songId" component={SongDisplayContainer}/>
     <Route exact path="/" component={SongsIndexContainer}/>
     <AuthRoute path="/login" component={SessionFormContainer}/>
