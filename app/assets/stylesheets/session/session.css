@@ -15,15 +15,41 @@
   left: 30%;
   font-family: Programme,sans-serif;
   width: 400px;
-  height: 500px;
+  height: 300px;
 }
 
-.modal-form input{
-  font-size: 100;
-  width: 100%;
+.text-form{
+  font-size: 20px;
+  width: 90%;
   height: 40px;
+  padding: 0px;
+  border: 0px;
+  margin-left: 15px;
 }
 
 .modal-form h2{
   color: #99a7ee;
+  margin-left: 15px;
+}
+
+.x-button{
+  text-decoration: none;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.submit-button{
+  width: 100px;
+  height: 50px;
+  font-size: 20px;
+  position: absolute;
+  left: 15px;
+  top: 155px;
+  cursor: pointer;
+  border: 2px solid black;
+}
+
+.submit-button:hover{
+  background: lightgray;
 }

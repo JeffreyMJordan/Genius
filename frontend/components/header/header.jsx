@@ -52,8 +52,8 @@ class Header extends React.Component{
           </div>
 
           <ul className="session-list">
-            <li><Link to="/signup">Sign Up</Link></li>
-            <li><Link to="/login">Sign In</Link></li>
+            <li className="js-modal-open"><Link to="/signup">Sign Up</Link></li>
+            <li className="js-modal-open"><Link to="/login">Sign In</Link></li>
           </ul>
           </div>
           <section className="header-bottom">
