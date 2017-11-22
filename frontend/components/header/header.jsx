@@ -9,17 +9,67 @@ class Header extends React.Component{
   render(){
     if(this.props.currentUser){
       return (
-        <div class="header">
-          <h1>Hi {this.props.currentUser.username}</h1>
-          <button onClick={() => this.props.logout()}>Logout</button>
+        <div className="header">
+        <div className="header-top">
+          <div className="searchbar">
+            <input type="text" defaultValue="Search lyrics and more"/>
+          </div>
+          <div className="logo">
+            <h1>Genius</h1>
+          </div>
+          
+          <ul className="session-list">
+            <li><p>Hi {this.props.currentUser.username}</p></li>
+            <li><button onClick={() => this.props.logout()}>Logout</button></li>
+
+          </ul> 
+        </div>
+
+        <section className="header-bottom">
+          <ul>
+            <li>FEATURED STORIES</li>
+            <li>TOP SONGS</li>
+            <li>VIDEOS</li>
+            <li>COMMUNITY</li>
+            <li> | </li>
+            <li>SHOP</li>
+            <li> | </li>
+          </ul>
+        </section>
         </div>
       );
     }else{
       return (
-        <div class="header">
-          <h1>Log In Please</h1>
-          <Link to="/signup">Sign Up</Link>
-          <Link to="/login">Sign In</Link>
+        <div className="header">
+        <div className="header-top">
+
+          <div className="searchbar-div">
+            <input class="searchbar" type="text" defaultValue="Search lyrics and more"/>
+          </div>
+
+          <div className="logo">
+            <h1>Genius</h1>
+          </div>
+
+          <ul className="session-list">
+            <li><Link to="/signup">Sign Up</Link></li>
+            <li><Link to="/login">Sign In</Link></li>
+          </ul>
+          </div>
+          <section className="header-bottom">
+          <ul>
+            <li>FEATURED STORIES</li>
+            <li>TOP SONGS</li>
+            <li>VIDEOS</li>
+            <li>COMMUNITY</li>
+            <li> | </li>
+            <li>SHOP</li>
+            <li> | </li>
+          </ul>
+        </section>
+          
+          
+        
         </div>
       );
     }

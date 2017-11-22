@@ -5,7 +5,6 @@ import {Route} from "react-router-dom";
 import {AuthRoute} from "../util/route_util";
 const App = () => (
   <div>
-    <h1>Genius</h1>
     <HeaderContainer />
     <AuthRoute path="/login" component={SessionFormContainer}/>
     <AuthRoute path="/signup" component={SessionFormContainer}/>
