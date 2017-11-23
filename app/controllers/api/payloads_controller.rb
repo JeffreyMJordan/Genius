@@ -6,6 +6,5 @@ class Api::PayloadsController < ApplicationController
     @albums = @songs.map{|song| song.album}
     @artists = @songs.map{|song| song.artist}
     render :payload
-
   end 
 end
