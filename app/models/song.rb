@@ -12,12 +12,14 @@ class Song < ApplicationRecord
   belongs_to :artist, 
     primary_key: :id,
     foreign_key: :artist_id,
-    class_name: 'Artist'
+    class_name: 'Artist',
+    optional: true
 
   belongs_to :album, 
     primary_key: :id,
     foreign_key: :album_id,
-    class_name: 'Album'
+    class_name: 'Album',
+    optional: true
 
   def album=(album)
     @album = Album.find_by_title(album)

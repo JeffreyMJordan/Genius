@@ -11,11 +11,17 @@ class Album < ApplicationRecord
   belongs_to :artist,
     primary_key: :id,
     foreign_key: :artist_id,
-    class_name: 'Artist'
+    class_name: 'Artist',
+    optional: true
 
   def artist=(artist)
     @artist = Artist.find_by_name(artist)
-    self.artist_id = @artist.id 
+    if @artist 
+      self.artist_id = @artist.id 
+    else 
+      self.artist_id = nil
+    end
+    
   end
 
 end

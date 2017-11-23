@@ -4,6 +4,8 @@ import * as SessionAPIUtil from './util/session_api_util';
 import configureStore from './store/store';
 import {login, logout, signup} from './actions/session_actions';
 import {fetchSong, fetchSongs, deleteSong, createSong} from './actions/song_actions';
+import {fetchArtist, fetchArtists, createArtist} from './actions/artist_actions';
+import {fetchAlbum, fetchAlbums, createAlbum} from './actions/album_actions';
 import Root from './components/root';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -20,6 +22,13 @@ document.addEventListener('DOMContentLoaded', () => {
   window.fetchSongs = fetchSongs;
   window.deleteSong = deleteSong;
   window.createSong = createSong;
+
+  window.fetchArtist = fetchArtist;
+  window.fetchAlbum = fetchAlbum;
+  window.fetchArtists = fetchArtists;
+  window.fetchAlbums = fetchAlbums;
+  window.createArtist = createArtist;
+  window.createAlbum = createAlbum;
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;

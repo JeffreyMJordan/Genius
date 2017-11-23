@@ -5,6 +5,7 @@ class Api::AlbumsController < ApplicationController
     if @album.save 
       render :show
     else 
+      debugger
       render json: @album.errors.full_messages, status: 422
     end 
   end 
@@ -12,6 +13,11 @@ class Api::AlbumsController < ApplicationController
   def show 
     @album = Album.find_by_id(params[:id])
     render :show
+  end 
+
+  def index 
+    @albums = Album.all 
+    render :index
   end 
 
   private 
