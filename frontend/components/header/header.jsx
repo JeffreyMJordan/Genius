@@ -34,7 +34,7 @@ class Header extends React.Component{
             <li> | </li>
             <li>SHOP</li>
             <li> | </li>
-            <li><Link to="songs/new">NEW SONG</Link></li>
+            <li><Link to="/songs/new">NEW SONG</Link></li>
             <li> | </li>
           </ul>
         </section>

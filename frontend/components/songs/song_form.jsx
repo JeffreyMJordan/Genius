@@ -1,4 +1,5 @@
 import React from "react";
+import {withRouter} from "react-router-dom";
 
 class SongForm extends React.Component{
   constructor(props){
@@ -8,7 +9,8 @@ class SongForm extends React.Component{
       artistName: "",
       title: "",
       creator_id: this.props.currentUser.id,
-      lyrics: ""
+      lyrics: "",
+      albumImageUrl: ""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,7 +18,8 @@ class SongForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.createSong(this.state);
+    this.props.createSong(this.state)
+      .then((action) => this.props.history.push(`/songs/${action.song.id}`));
   }
 
   handleChange(type){
@@ -41,6 +44,11 @@ class SongForm extends React.Component{
           value={this.state.albumName}
           onChange={this.handleChange('albumName')}/>
 
+          <input type="text"  
+          placeholder="Album Image URL"
+          value={this.state.albumImageUrl}
+          onChange={this.handleChange('albumImageUrl')}/>
+
           <input type="text" placeholder="Artist"
           value={this.state.artistName}
           onChange={this.handleChange('artistName')}/>
@@ -56,4 +64,4 @@ class SongForm extends React.Component{
   }
 }
 
-export default SongForm;
+export default withRouter(SongForm);

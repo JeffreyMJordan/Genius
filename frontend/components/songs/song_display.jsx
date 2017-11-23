@@ -6,6 +6,7 @@ class SongDisplay extends React.Component{
   }
 
   componentDidMount(){
+    console.log("here");
     this.props.fetchPayloadBySongID(this.props.songId);
   }
 
@@ -24,7 +25,10 @@ class SongDisplay extends React.Component{
         </div>
       );
     }else{
-      return null;
+      return (
+      <div className="song-display">
+        <h1>No song by that name</h1>
+      </div>);
     }
     
     
