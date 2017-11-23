@@ -1,6 +1,6 @@
 import {merge} from "lodash";
 import {RECEIVE_SONG, RECEIVE_SONGS, REMOVE_SONG} from "../actions/song_actions";
-import {RECEIVE_PAYLOADS} from "../actions/payload_actions";
+import {RECEIVE_PAYLOADS, RECEIVE_PAYLOAD} from "../actions/payload_actions";
 
 
 export default (state={}, action) => {
@@ -23,6 +23,12 @@ export default (state={}, action) => {
         songs[payload.song.id] = payload.song;
       });
       return merge({}, songs);
+    
+    case RECEIVE_PAYLOAD:
+      let newState2 = merge({}, state);
+      let payload = action.payload;
+      newState2[payload.song.id] = payload.song;
+      return newState2;
 
     default: 
       return state;

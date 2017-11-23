@@ -6,7 +6,7 @@ class SongDisplay extends React.Component{
   }
 
   componentDidMount(){
-    // this.props.fetchPayload(this.props.songId);
+    this.props.fetchPayloadBySongID(this.props.songId);
   }
 
 

@@ -1,6 +1,6 @@
 import {merge} from "lodash";
 import {RECEIVE_ARTIST, RECEIVE_ARTISTS, REMOVE_ARTIST} from "../actions/artist_actions";
-import {RECEIVE_PAYLOADS} from "../actions/payload_actions";
+import {RECEIVE_PAYLOADS, RECEIVE_PAYLOAD} from "../actions/payload_actions";
 
 export default (state={}, action) => {
   Object.freeze(state);
@@ -22,6 +22,11 @@ export default (state={}, action) => {
         artists[payload.artist.id] = payload.artist;
       });
       return merge({}, artists);
+    case RECEIVE_PAYLOAD:
+      let newState2 = merge({}, state);
+      let payload = action.payload;
+      newState2[payload.artist.id] = payload.artist;
+      return newState2;
     
     default: 
       return state;

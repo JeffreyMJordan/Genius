@@ -7,7 +7,8 @@ import {fetchSong, fetchSongs, deleteSong, createSong} from './actions/song_acti
 import {fetchArtist, fetchArtists, createArtist} from './actions/artist_actions';
 import {fetchAlbum, fetchAlbums, createAlbum} from './actions/album_actions';
 import Root from './components/root';
-import {fetchPayloads} from './actions/payload_actions';
+import {fetchPayloads, fetchPayloadBySongID} from './actions/payload_actions';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -19,22 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }else{
     store = configureStore();
   }
-  window.fetchSong = fetchSong;
-  window.fetchSongs = fetchSongs;
-  window.deleteSong = deleteSong;
-  window.createSong = createSong;
-
-  window.fetchArtist = fetchArtist;
-  window.fetchAlbum = fetchAlbum;
-  window.fetchArtists = fetchArtists;
-  window.fetchAlbums = fetchAlbums;
-  window.createArtist = createArtist;
-  window.createAlbum = createAlbum;
-
+  
   window.fetchPayloads = fetchPayloads;
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+  window.fetchPayloadBySongID = fetchPayloadBySongID;
 
   ReactDOM.render(<Root store={store}/>, root);
 });

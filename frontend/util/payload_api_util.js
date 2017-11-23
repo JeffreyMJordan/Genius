@@ -5,3 +5,11 @@ export const fetchPayloads = (limit) => {
     method: "GET"
   });
 };
+
+export const fetchPayloadBySongID = (id) => {
+  return $.ajax({
+    url: "api/payloads/songs",
+    data: {id: id},
+    method: "GET"
+  });
+};
