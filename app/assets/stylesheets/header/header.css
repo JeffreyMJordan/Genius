@@ -28,6 +28,17 @@
   font-family: Inconsolata,sans-serif;
   color: white;
   padding: 20px;
+  
+}
+
+.header-bottom li a{
+  text-decoration: none;
+  color: white;
+}
+
+.header-bottom li a:hover{
+  color: #ffff64;
+  cursor: pointer;
 }
 
 .header-bottom li:hover{
