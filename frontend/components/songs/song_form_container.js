@@ -4,7 +4,7 @@ import SongForm from "./song_form";
 
 const mapStateToProps = (state) => {
   return {
-
+    currentUser: state.session.currentUser
   };
 };
 
