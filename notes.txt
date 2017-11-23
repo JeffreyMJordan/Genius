@@ -18,3 +18,10 @@ Create an issue for each MVP
 How to handle song index items 
   Maybe make it a song index item container 
   Maybe pass it down through the props
+
+
+Payload Api routes 
+  Jesse says definitely only hit it once 
+  
+
+Maybe have a blank album, artist in the state

@@ -1,7 +1,7 @@
 class Album < ApplicationRecord
   validates :title, presence: true
   validates :title, uniqueness: true
-  attr_reader :artist
+  attr_reader :artistName
 
   has_many :songs, 
     primary_key: :id,
@@ -14,10 +14,10 @@ class Album < ApplicationRecord
     class_name: 'Artist',
     optional: true
 
-  def artist=(artist)
-    @artist = Artist.find_by_name(artist)
-    if @artist 
-      self.artist_id = @artist.id 
+  def artistName=(artist)
+    @artistName = Artist.find_by_name(artist)
+    if @artistName 
+      self.artist_id = @artistName.id 
     else 
       self.artist_id = nil
     end

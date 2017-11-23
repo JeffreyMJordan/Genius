@@ -2,6 +2,8 @@ import SongsIndex from './songs_index';
 import {connect} from "react-redux";
 import {values} from "lodash";
 import {fetchSong, deleteSong, fetchSongs} from "../../actions/song_actions";
+import {fetchAlbums} from "../../actions/album_actions";
+import {fetchArtists} from "../../actions/artist_actions";
 
 const mapStateToProps = (state) => {
   
@@ -17,10 +19,13 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
+
   return {
     fetchSongs: () => dispatch(fetchSongs()),
     fetchSong: (id) => dispatch(fetchSong(id)),
-    deleteSong: (id) => dispatch(deleteSong(id))
+    deleteSong: (id) => dispatch(deleteSong(id)),
+    fetchAlbums: () => dispatch(fetchAlbums()),
+    fetchArtists: () => dispatch(fetchArtists())
     //Also need to dispatch fetchAlbums and fetchArtists
     //Control amount of songs/albums etc. in backend 
   };
