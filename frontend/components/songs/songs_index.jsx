@@ -12,7 +12,6 @@ class SongsIndex extends React.Component{
 
   render(){
     const songs = this.props.songs;
-    console.log(songs);
     return (
       <div>
         <ul>
