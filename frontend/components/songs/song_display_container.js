@@ -6,8 +6,12 @@ import {withRouter} from "react-router-dom";
 const mapStateToProps = (state, ownProps) => {
   let songId = ownProps.match.params.songId;
   let song = state.songs[songId];
+  let album = state.albums[song.album_id];
+  let artist = state.artists[song.artist_id];
   return {
-    song: song
+    song: song,
+    album: album,
+    artist: artist
   };
 };
 

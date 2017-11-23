@@ -1,5 +1,7 @@
 import {merge} from "lodash";
 import {RECEIVE_SONG, RECEIVE_SONGS, REMOVE_SONG} from "../actions/song_actions";
+import {RECEIVE_PAYLOADS} from "../actions/payload_actions";
+
 
 export default (state={}, action) => {
   Object.freeze(state);
@@ -14,6 +16,14 @@ export default (state={}, action) => {
       let newState1 = merge({}, state);
       newState1[action.songId] = undefined;
       return newState1;
+
+    case RECEIVE_PAYLOADS:
+      let songs = merge({}, state);
+      action.payloads.forEach((payload) => {
+        songs[payload.song.id] = payload.song;
+      });
+      return merge({}, songs);
+
     default: 
       return state;
   }

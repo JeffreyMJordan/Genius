@@ -7,9 +7,7 @@ class SongsIndex extends React.Component{
   }
 
   componentDidMount(){
-    // this.props.fetchSongs();
-    // this.props.fetchAlbums();
-    // this.props.fetchArtists();
+    this.props.fetchPayloads(10);
   }
 
   render(){
@@ -17,7 +15,7 @@ class SongsIndex extends React.Component{
     return (
       <div>
         <ul>
-          {songs.map((song) => <SongIndexItem key={song.id} song={song}/>)}
+          {songs.map((song) => <SongIndexItem key={song.id} song={song} artist={this.props.artists[song.artist_id]} album={this.props.albums[song.album_id]}/>)}
         </ul>
         
       </div>
