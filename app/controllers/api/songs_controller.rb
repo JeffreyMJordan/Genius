@@ -1,7 +1,13 @@
 class Api::SongsController < ApplicationController
 
+
   def create 
-    @song = Song.new(song_params)
+    @song = Song.new
+    @song.artistName = song_params[:artistName]
+    @song.albumName = song_params[:albumName]
+    @song.lyrics = song_params[:lyrics]
+    @song.creator_id = song_params[:creator_id]
+    @song.title = song_params[:title]
     if @song.save 
       render :show
     else 

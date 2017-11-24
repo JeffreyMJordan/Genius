@@ -18,7 +18,7 @@ class Album < ApplicationRecord
     if @artistName 
       self.artist_id = @artistName.id 
     else 
-      self.artist_id = nil
+      self.artist_id = nil 
     end
     
   end

@@ -20,13 +20,25 @@ class Song < ApplicationRecord
     class_name: 'Album'
 
   def albumName=(album)
-    @albumName = Album.find_by_title(album)
-    self.album_id = @albumName.id 
+    @albumName = Album.find_by_title(album) 
+    if @albumName
+      self.album_id = @albumName.id 
+    else 
+      new_album = Album.new({title: album, artist_id: self.artist_id})
+      new_album.save 
+      self.album_id = Album.last.id
+    end 
   end
 
   def artistName=(artist)
     @artistName = Artist.find_by_name(artist)
-    self.artist_id = @artistName.id 
+    if @artistName
+      self.artist_id = @artistName.id 
+    else 
+      new_artist = Artist.new({name: artist})
+      new_artist.save
+      self.artist_id = Artist.last.id
+    end 
   end
 
 
