@@ -18,7 +18,7 @@ class SongDisplay extends React.Component{
         <div className="song-display">
           <SongDisplayHeader song={this.props.song} album={this.props.album} artist={this.props.artist}/>
           <div className="lyrics-container">
-            <h1 onMouseUp={(e) => console.log(window.getSelection().getRangeAt(0))}>Lyrics</h1>
+            <h1 onSelect={(e) => console.log(window.getSelection().getRangeAt(0))}>Lyrics</h1>
             <SongLyrics song={this.props.song}/>
           </div>
         </div>

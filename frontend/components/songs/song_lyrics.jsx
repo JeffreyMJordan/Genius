@@ -2,12 +2,18 @@ import React from "react";
 
 class SongLyrics extends React.Component{
   constructor(props){
-    super(props);
+    super(props); 
+    this.handleHighlight = this.handleHighlight.bind(this);
+  } 
+
+  handleHighlight(e){
+    console.log(window.getSelection().getRangeAt(0));
+    console.log(window.getSelection());
   }
 
   render(){
     return (
-    <div onMouseUp={(e) => console.log(window.getSelection().getRangeAt(0))} className="lyrics">
+    <div onMouseUp={this.handleHighlight} className="lyrics">
       {this.props.song.lyrics}
     </div>);
   }
