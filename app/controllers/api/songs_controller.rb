@@ -4,6 +4,8 @@ class Api::SongsController < ApplicationController
   def create 
     @song = Song.new
     @song.artistName = song_params[:artistName]
+    @song.albumImageURL = song_params[:albumImageURL]
+    debugger
     @song.albumName = song_params[:albumName]
     @song.lyrics = song_params[:lyrics]
     @song.creator_id = song_params[:creator_id]
@@ -39,6 +41,6 @@ class Api::SongsController < ApplicationController
 
   private 
   def song_params 
-    params.require(:song).permit(:title, :artistName, :albumName, :lyrics, :creator_id)
+    params.require(:song).permit(:title, :artistName, :albumName, :lyrics, :creator_id, :albumImageURL)
   end
 end

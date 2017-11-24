@@ -3,6 +3,7 @@ class Song < ApplicationRecord
   validates :title, uniqueness: true
   attr_reader :albumName
   attr_reader :artistName
+  attr_accessor :albumImageURL
 
   belongs_to :creator,
     primary_key: :id,
@@ -24,7 +25,7 @@ class Song < ApplicationRecord
     if @albumName
       self.album_id = @albumName.id 
     else 
-      new_album = Album.new({title: album, artist_id: self.artist_id})
+      new_album = Album.new({title: album, artist_id: self.artist_id, image_url: @albumImageURL})
       new_album.save 
       self.album_id = Album.last.id
     end 

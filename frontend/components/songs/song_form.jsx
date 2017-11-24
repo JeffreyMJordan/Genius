@@ -10,7 +10,7 @@ class SongForm extends React.Component{
       title: "",
       creator_id: this.props.currentUser.id,
       lyrics: "",
-      albumImageUrl: ""
+      albumImageURL: ""
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -46,8 +46,8 @@ class SongForm extends React.Component{
 
           <input type="text"  
           placeholder="Album Image URL"
-          value={this.state.albumImageUrl}
-          onChange={this.handleChange('albumImageUrl')}/>
+          value={this.state.albumImageURL}
+          onChange={this.handleChange('albumImageURL')}/>
 
           <input type="text" placeholder="Artist"
           value={this.state.artistName}
