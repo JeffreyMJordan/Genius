@@ -15,7 +15,7 @@ class Header extends React.Component{
             <input type="text" defaultValue="Search lyrics and more"/>
           </div>
           <div className="logo">
-            <h1>Genius</h1>
+            <Link to="/"><h1>Genius</h1></Link>
           </div>
           
           <ul className="session-list">
@@ -50,7 +50,7 @@ class Header extends React.Component{
           </div>
 
           <div className="logo">
-            <h1>Genius</h1>
+            <Link to="/"><h1>Genius</h1></Link>
           </div>
 
           <ul className="session-list">
