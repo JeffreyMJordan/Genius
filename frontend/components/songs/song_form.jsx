@@ -32,6 +32,8 @@ class SongForm extends React.Component{
   render(){
     return (
       <div className="song-form">
+        <h2>Add a Song</h2>
+
         <form action="" onSubmit={this.handleSubmit} >
           
           <h3>Title</h3>
@@ -62,7 +64,7 @@ class SongForm extends React.Component{
           value={this.state.lyrics}
           onChange={this.handleChange("lyrics")}/>
 
-          <input type="submit" value="Create Song"/>
+          <input className="song-submit" type="submit" value="Create Song"/>
         </form>
       </div>
     );

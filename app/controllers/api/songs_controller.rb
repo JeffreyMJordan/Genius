@@ -5,7 +5,6 @@ class Api::SongsController < ApplicationController
     @song = Song.new
     @song.artistName = song_params[:artistName]
     @song.albumImageURL = song_params[:albumImageURL]
-    debugger
     @song.albumName = song_params[:albumName]
     @song.lyrics = song_params[:lyrics]
     @song.creator_id = song_params[:creator_id]
