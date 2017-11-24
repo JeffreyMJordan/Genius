@@ -1,5 +1,6 @@
 import React from "react";
 import SongDisplayHeader from './song_display_header';
+import SongLyrics from './song_lyrics';
 class SongDisplay extends React.Component{
   constructor(props){
     super(props);
@@ -17,8 +18,8 @@ class SongDisplay extends React.Component{
         <div className="song-display">
           <SongDisplayHeader song={this.props.song} album={this.props.album} artist={this.props.artist}/>
           <div className="lyrics-container">
-            <h1>Lyrics</h1>
-            {this.props.song.lyrics.split("\n").map((line) => <div><p>{line}</p></div>)}
+            <h1 onMouseUp={(e) => console.log(window.getSelection().getRangeAt(0))}>Lyrics</h1>
+            <SongLyrics song={this.props.song}/>
           </div>
         </div>
       );
