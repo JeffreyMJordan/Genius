@@ -11,6 +11,11 @@ class User < ApplicationRecord
     class_name: 'Song'
   )
 
+  has_many :referents,
+    primary_key: :id,
+    foreign_key: :creator_id,
+    class_name: 'Referent'
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)

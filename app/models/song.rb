@@ -20,6 +20,8 @@ class Song < ApplicationRecord
     foreign_key: :album_id,
     class_name: 'Album'
 
+  has_many :referents
+
   def albumName=(album)
     @albumName = Album.find_by_title(album) 
     if @albumName
