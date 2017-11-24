@@ -18,7 +18,7 @@ class SongDisplay extends React.Component{
           <SongDisplayHeader song={this.props.song} album={this.props.album} artist={this.props.artist}/>
           <div className="lyrics-container">
             <h1>Lyrics</h1>
-            <p>{this.props.song.lyrics}</p>
+            {this.props.song.lyrics.split("\n").map((line) => <div><p>{line}</p></div>)}
           </div>
         </div>
       );
