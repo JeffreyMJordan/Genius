@@ -16,12 +16,10 @@ class SongDisplay extends React.Component{
       return (
         <div className="song-display">
           <SongDisplayHeader song={this.props.song} album={this.props.album} artist={this.props.artist}/>
-          <p>Title: {this.props.song.title}</p>
-          <p>Artist: {this.props.artist.name}</p>
-          <p>Album: {this.props.album.title}</p>
-          <h1>Lyrics</h1>
-          <p>{this.props.song.lyrics}</p>
-          
+          <div className="lyrics-container">
+            <h1>Lyrics</h1>
+            <p>{this.props.song.lyrics}</p>
+          </div>
         </div>
       );
     }else{

@@ -8,6 +8,7 @@
   flex-direction: row;
   text-decoration: none;
   color: black;
+  width: 100%;
 }
 
 .song-index-item{
@@ -28,24 +29,14 @@
   display: flex;
   justify-content: center;
   font-family: sans-serif;
-  
+  width: 60%
+}
+
+.songs-index ul{
+  width: 100%;
 }
 
 .songs-index-header{
   border-bottom: 1px solid black;
 }
 
-.song-display-header{
-  width: 100%;
-  height: 300px;
-}
-
-.song-display-header-inner-image{
-  width: 100px;
-  height: 100px;
-}
-
-.song-display-header-inner{
-  background: rgba(0,0,0,0.6);
-  height: 100%
-}
