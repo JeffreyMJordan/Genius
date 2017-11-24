@@ -1,0 +1,22 @@
+.song-form{
+  background: black;
+  display: flex; 
+  flex-direction: column;
+  height: 1000px;
+}
+
+.song-form form{
+  display: flex; 
+  flex-direction: column;
+}
+
+.song-form form input{
+  width: 40%;
+  height: 50px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.song-form h3{
+  color: white;
+}
