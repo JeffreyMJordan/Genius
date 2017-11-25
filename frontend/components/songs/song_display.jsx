@@ -1,14 +1,16 @@
 import React from "react";
 import SongDisplayHeader from './song_display_header';
 import SongLyrics from './song_lyrics';
+import {withRouter} from "react-router-dom";
+
 class SongDisplay extends React.Component{
   constructor(props){
     super(props);
   }
 
-  componentDidMount(){
-    console.log("here");
-    this.props.fetchPayloadBySongID(this.props.songId);
+  componentWillMount(){
+    console.log(this.props.match.params);
+    this.props.fetchPayloadBySongID(this.props.match.params.songId);
   }
 
 
@@ -35,4 +37,4 @@ class SongDisplay extends React.Component{
 
 }
 
-export default SongDisplay;
+export default withRouter(SongDisplay);
