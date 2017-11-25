@@ -4,12 +4,14 @@ import SessionReducer from './session_reducer';
 import SongsReducer from './songs_reducer';
 import ArtistsReducer from './artists_reducer';
 import AlbumsReducer from './albums_reducer';
+import ReferentsReducer from './referents_reducer';
 
 export default combineReducers({
   session: SessionReducer,
   songs: SongsReducer,
   errors: ErrorsReducer,
   artists: ArtistsReducer,
-  albums: AlbumsReducer
+  albums: AlbumsReducer,
+  referents: ReferentsReducer
 });
 

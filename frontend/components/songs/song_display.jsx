@@ -9,8 +9,14 @@ class SongDisplay extends React.Component{
   }
 
   componentWillMount(){
-    console.log(this.props.match.params);
     this.props.fetchPayloadBySongID(this.props.match.params.songId);
+  }
+
+  componentWillReceiveProps(newProps){
+    if (newProps.album===undefined){
+      this.props.fetchPayloadBySongID(newProps.match.params.songId);
+    }
+    
   }
 
 
