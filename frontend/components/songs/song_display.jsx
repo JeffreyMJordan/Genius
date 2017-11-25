@@ -8,7 +8,7 @@ class SongDisplay extends React.Component{
     super(props);
   }
 
-  componentWillMount(){
+  componentDidMount(){
     this.props.fetchPayloadBySongID(this.props.match.params.songId);
   }
 

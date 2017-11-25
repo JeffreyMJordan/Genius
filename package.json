@@ -8,6 +8,7 @@
     "babel-preset-react": "^6.24.1",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
+    "react-element-to-string": "^1.0.2",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
@@ -36,10 +37,8 @@
     "url": "https://github.com/JeffreyMJordan/Genius/issues"
   },
   "homepage": "https://github.com/JeffreyMJordan/Genius#readme",
-  
   "engines": {
-      "node": "6.10.1",
-      "npm": "3.10.10"
+    "node": "6.10.1",
+    "npm": "3.10.10"
   }
-
 }

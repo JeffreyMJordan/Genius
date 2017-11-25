@@ -1,4 +1,8 @@
 import React from "react";
+import {Link, withRouter} from "react-router-dom";
+var ReactToString = require('react-element-to-string');
+
+
 
 class SongLyrics extends React.Component{
   constructor(props){
@@ -6,6 +10,7 @@ class SongLyrics extends React.Component{
     this.handleHighlight = this.handleHighlight.bind(this);
     this.createLyrics = this.createLyrics.bind(this);
     this.createIdxRefs = this.createIdxRefs.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   } 
 
 
@@ -27,30 +32,41 @@ class SongLyrics extends React.Component{
     return {startIdxRefs, endIdxRefs};
   }
 
+  handleClick(id){
+    return () => {
+      let last = this.props.history.last;
+      this.props.history.push(`/songs/${this.props.match.params.songId}/${id}`);
+    };
+  }
+
+
+  //Just use a map, have it use an anchor tag, react will just interpolate the array 
   createLyrics(){
     let {startIdxRefs, endIdxRefs} = this.createIdxRefs();
     let str = "";
-    this.props.song.lyrics.split("").forEach((letter, idx) => {
-      if (startIdxRefs[idx]){
-        str += "<a>";
-        str += letter;
-      }else if (endIdxRefs[idx]){
-        str += letter;
-        str += "</a>";
+    let arr = [];
+    for(var i = 0; i<this.props.song.lyrics.length; i++){
+      let letter = this.props.song.lyrics[i];
+      if(startIdxRefs[i]){
+        let ref = startIdxRefs[i];
+        arr.push(<a onClick={this.handleClick(ref.id)}>{this.props.song.lyrics.slice(ref.start_idx, ref.end_idx)}</a>);
+        i = ref.end_idx-1;
       }else{
-        str += letter;
+        arr.push(letter);
       }
-      
-    });
-    return {__html: str};
+    }
+    return arr;
   }
 
   render(){
     return (
-    <div onMouseUp={this.handleHighlight} className="lyrics">
-      <div dangerouslySetInnerHTML={this.createLyrics()}/>
+    <div>
+      <div onMouseUp={this.handleHighlight} 
+        className="ghost">{this.props.song.lyrics}</div>
+        
+      <div className="lyrics">{this.createLyrics()}</div>
     </div>);
   }
 }
 
-export default SongLyrics;
+export default withRouter(SongLyrics);

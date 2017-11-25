@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => {
   if (song){
     album = state.albums[song.album_id];
     artist = state.artists[song.artist_id];
-    referents = state.referents;
+    referents = state.referents[song.id];
   }
   return {
     songId: songId,

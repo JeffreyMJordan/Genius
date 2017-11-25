@@ -15,7 +15,7 @@ const App = () => (
   <div>
     <HeaderContainer />
   
-  <Route exact path="/songs/:songId" component={SongDisplayContainer}/>
+  <Route path="/songs/:songId" component={SongDisplayContainer}/>
   <Route exact path="/" component={SongsIndexContainer}/>
   <Route path="/new/song" component={SongFormContainer}/>
   <AuthRoute path="/login" component={SessionFormContainer}/>
