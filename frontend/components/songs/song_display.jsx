@@ -22,12 +22,16 @@ class SongDisplay extends React.Component{
 
   render(){
     if(this.props.artist && this.props.song && this.props.album){
+      console.log(this.props.referents);
       return (
         <div className="song-display">
           <SongDisplayHeader song={this.props.song} album={this.props.album} artist={this.props.artist}/>
           <div className="lyrics-container">
-            <h1 onSelect={(e) => console.log(window.getSelection().getRangeAt(0))}>Lyrics</h1>
-            <SongLyrics song={this.props.song}/>
+            <h1>Lyrics</h1>
+            <SongLyrics 
+            song={this.props.song}
+            referents={this.props.referents}
+            />
           </div>
         </div>
       );

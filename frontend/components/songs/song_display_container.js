@@ -9,15 +9,18 @@ const mapStateToProps = (state, ownProps) => {
   let song = state.songs[songId];
   let album = undefined;
   let artist = undefined;
+  let referents = undefined;
   if (song){
     album = state.albums[song.album_id];
     artist = state.artists[song.artist_id];
+    referents = state.referents;
   }
   return {
     songId: songId,
     song: song,
     album: album,
-    artist: artist
+    artist: artist,
+    referents: referents
   };
 };
 
