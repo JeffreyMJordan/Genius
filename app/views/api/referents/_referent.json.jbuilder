@@ -1,0 +1,1 @@
+json.extract! referent, :id, :start_idx, :end_idx, :creator_id, :song_id

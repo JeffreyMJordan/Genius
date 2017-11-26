@@ -9,6 +9,11 @@ class Api::ReferentsController < ApplicationController
     end 
   end 
 
+  def show 
+    @referent = Referent.find_by_id(params[:id])
+    render :show
+  end 
+
 
   private 
   def referent_params 

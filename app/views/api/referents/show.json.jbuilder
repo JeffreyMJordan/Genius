@@ -1,0 +1,1 @@
+json.partial! "api/referents/referent", referent: @referent

@@ -8,7 +8,7 @@ import {fetchArtist, fetchArtists, createArtist} from './actions/artist_actions'
 import {fetchAlbum, fetchAlbums, createAlbum} from './actions/album_actions';
 import Root from './components/root';
 import {fetchPayloads, fetchPayloadBySongID} from './actions/payload_actions';
-
+import {createReferent, fetchReferent} from './util/referent_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+  window.createReferent = createReferent;
+  window.fetchReferent = fetchReferent;
   window.fetchPayloadBySongID = fetchPayloadBySongID;
 
   ReactDOM.render(<Root store={store}/>, root);
