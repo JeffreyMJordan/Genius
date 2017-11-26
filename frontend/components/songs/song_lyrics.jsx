@@ -1,6 +1,5 @@
 import React from "react";
 import {Link, withRouter} from "react-router-dom";
-var ReactToString = require('react-element-to-string');
 
 
 
@@ -18,8 +17,9 @@ class SongLyrics extends React.Component{
   //Do the same for end_indices
 
   handleHighlight(e){
-    console.log(window.getSelection().getRangeAt(0));
-    this.props.history.push(`/songs/${this.props.match.params.songId}/create`);
+    let startIdx = window.getSelection().getRangeAt(0).startOffset;
+    let endIdx = window.getSelection().getRangeAt(0).endOffset;
+    this.props.history.push(`/songs/${this.props.match.params.songId}/create/${startIdx}/${endIdx}`);
   }
 
   createIdxRefs(){
