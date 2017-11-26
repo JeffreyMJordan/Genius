@@ -8,4 +8,6 @@ class Referent < ApplicationRecord
     foreign_key: :creator_id,
     class_name: 'User'
 
+  has_many :annotations
+
 end

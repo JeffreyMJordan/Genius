@@ -16,6 +16,11 @@ class User < ApplicationRecord
     foreign_key: :creator_id,
     class_name: 'Referent'
 
+  has_many :annotations,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: 'Annotation'
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
