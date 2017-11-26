@@ -1,20 +1,23 @@
-.lyrics a{
-  text-decoration: underline;
-  color: blue;
-  cursor: pointer;
-  border: 1px solid grey;
-}
-
 .lyrics{
   position: relative;
   width: 300px;
+  color: black;
+  white-space: pre-wrap;
+}
+
+.lyrics a {
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+  z-index: 4;
+  position: relative;
 }
 
 .ghost{
-  /* color: transparent; */
-  z-index: 10;
+  white-space: pre-wrap;
+  color: transparent;
+  z-index: 3;
   position: absolute;
   width: 300px;
-  /* top:0;right:0;bottom:0;left:0; */
 }
 

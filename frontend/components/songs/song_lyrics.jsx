@@ -19,7 +19,7 @@ class SongLyrics extends React.Component{
 
   handleHighlight(e){
     console.log(window.getSelection().getRangeAt(0));
-    console.log(window.getSelection());
+    this.props.history.push(`/songs/${this.props.match.params.songId}/create`);
   }
 
   createIdxRefs(){
@@ -60,10 +60,11 @@ class SongLyrics extends React.Component{
 
   render(){
     return (
-    <div>
-      <div onMouseUp={this.handleHighlight} 
-        className="ghost">{this.props.song.lyrics}</div>
-        
+    <div onMouseUp={this.handleHighlight} >
+      <div
+        onClick={(e) => console.log(e.target)}
+        className="ghost">{this.props.song.lyrics}
+      </div>
       <div className="lyrics">{this.createLyrics()}</div>
     </div>);
   }
