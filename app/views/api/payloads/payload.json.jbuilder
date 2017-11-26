@@ -19,4 +19,4 @@ json.set! :referents do
     json.song_id ref.song_id
     json.creator_id ref.creator_id
   end 
-end 
+end

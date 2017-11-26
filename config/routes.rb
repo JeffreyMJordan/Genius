@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :artists, only: [:create, :show, :index]
     resources :referents, only: [:create, :show]
     resources :annotations, only: [:create, :show]
+    get 'annotations_by_referent', to: 'annotations#by_referent'
     get 'payloads', to: 'payloads#send_payloads'
     get 'payloads/songs', to: 'payloads#send_payload_by_song_id'
   end

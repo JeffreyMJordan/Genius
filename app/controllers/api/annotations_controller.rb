@@ -9,8 +9,15 @@ class Api::AnnotationsController < ApplicationController
   end 
 
   def show 
+    debugger
     @annotation = Annotation.find_by_id(params[:id])
     render :show
+  end 
+
+  def by_referent
+    @referent = Referent.find_by_id(params[:id])
+    @annotations = @referent.annotations
+    render :index
   end 
 
   private 

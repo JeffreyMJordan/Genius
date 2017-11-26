@@ -2,6 +2,8 @@ import {merge} from "lodash";
 import {RECEIVE_PAYLOAD} from "../actions/payload_actions";
 import {RECEIVE_REFERENT} from "../actions/referent_actions";
 
+
+//In the state, referent arrays are mapped to song ids
 export default (state={}, action) => {
   Object.freeze(state);
   switch(action.type){

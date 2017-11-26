@@ -9,6 +9,7 @@ import {fetchAlbum, fetchAlbums, createAlbum} from './actions/album_actions';
 import Root from './components/root';
 import {fetchPayloads, fetchPayloadBySongID} from './actions/payload_actions';
 import {createReferent, fetchReferent} from './util/referent_api_util';
+import {createAnnotation, fetchAnnotation, fetchAnnotationsByReferent} from './actions/annotation_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -21,13 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   
-  window.fetchPayloads = fetchPayloads;
-
+  window.createAnnotation = createAnnotation;
+  window.fetchAnnotation = fetchAnnotation;
+  window.fetchAnnotationsByReferent = fetchAnnotationsByReferent;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.createReferent = createReferent;
-  window.fetchReferent = fetchReferent;
-  window.fetchPayloadBySongID = fetchPayloadBySongID;
+  
 
   ReactDOM.render(<Root store={store}/>, root);
 });
