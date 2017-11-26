@@ -1,9 +1,14 @@
 import {merge} from "lodash";
 import {RECEIVE_PAYLOAD} from "../actions/payload_actions";
+import {RECEIVE_REFERENT} from "../actions/referent_actions";
 
 export default (state={}, action) => {
   Object.freeze(state);
   switch(action.type){
+    case RECEIVE_REFERENT:
+      let newState2 = merge({}, state);
+      newState2[action.ref.song_id].push(action.ref);
+      return newState2;
     case RECEIVE_PAYLOAD:
       let newState = merge({}, state);
       if(action.payload.referents[0]){
