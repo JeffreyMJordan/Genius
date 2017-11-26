@@ -25,10 +25,13 @@ class SongLyrics extends React.Component{
   createIdxRefs(){
     let startIdxRefs = {};
     let endIdxRefs = {};
-    this.props.referents.forEach((ref) => {
-      startIdxRefs[ref.start_idx] = ref;
-      endIdxRefs[ref.end_idx] = ref;
-    });
+    if(this.props.referents){
+      this.props.referents.forEach((ref) => {
+        startIdxRefs[ref.start_idx] = ref;
+        endIdxRefs[ref.end_idx] = ref;
+      });
+    }
+    
     return {startIdxRefs, endIdxRefs};
   }
 
