@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20171126020156) do
     t.integer "referent_id", null: false
     t.integer "author_id", null: false
     t.text "body", null: false
-    t.datetime "created_at", null: false
+  t.datetime "created_at", null: false 
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_annotations_on_author_id"
     t.index ["referent_id"], name: "index_annotations_on_referent_id"

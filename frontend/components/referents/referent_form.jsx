@@ -13,7 +13,11 @@ class ReferentForm extends React.Component{
     ref["end_idx"] = this.props.match.params.endIdx;
     ref["song_id"] = this.props.song.id;
     ref["creator_id"] = this.props.currentUser.id;
-    this.props.createReferent(ref);
+    this.props.createReferent(ref)
+      .then((res) => {
+        return this.props.history.push(`/songs/${this.props.match.params.songId}/${res.ref.id}/createannotation`);
+      });
+
   }
 
   render(){
