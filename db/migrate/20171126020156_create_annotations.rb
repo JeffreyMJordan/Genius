@@ -1,6 +1,5 @@
 class CreateAnnotations < ActiveRecord::Migration[5.1]
   def change
-    drop_table :annotations
     create_table :annotations do |t|
       t.integer :referent_id, null: false
       t.integer :author_id, null: false
