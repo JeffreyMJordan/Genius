@@ -25,14 +25,14 @@ class AnnotationDisplay extends React.Component{
           <ul>
             {this.props.annotations.map((ann) => <AnnotationIndexItem annotation={ann}/>)}
           </ul>
-          <Link to={`/songs/${this.props.songId}/${this.props.refId}/createannotation`}>Create new annotation</Link>
+          <Link className="new-annotation-link" to={`/songs/${this.props.songId}/${this.props.refId}/createannotation`}>Create new annotation</Link>
         </div>
       );
     }else{
       return (
         <div className="annotation-display fixed">
           
-          <Link to={`/songs/${this.props.songId}/${this.props.refId}/createannotation`}>Create new annotation</Link>
+          <Link className="new-annotation-link" to={`/songs/${this.props.songId}/${this.props.refId}/createannotation`}>Create new annotation</Link>
         </div>
       );
     }
