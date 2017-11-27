@@ -5,9 +5,11 @@ import {withRouter }from "react-router-dom";
 
 const mapStateToProps = (state, ownProps) => {
   let refId = ownProps.match.params.refId;
+  let songId = ownProps.match.params.songId;
   return {
     refId,
-    annotations: state.annotations[refId]
+    annotations: state.annotations[refId],
+    songId
   };
 };
 

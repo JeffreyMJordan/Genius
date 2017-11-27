@@ -1,5 +1,6 @@
 import React from "react";
 import AnnotationIndexItem from "./annotation_index_item";
+import {Link} from "react-router-dom";
 
 class AnnotationDisplay extends React.Component{
   constructor(props){
@@ -24,12 +25,14 @@ class AnnotationDisplay extends React.Component{
           <ul>
             {this.props.annotations.map((ann) => <AnnotationIndexItem annotation={ann}/>)}
           </ul>
+          <Link to={`/songs/${this.props.songId}/${this.props.refId}/createannotation`}>Create new annotation</Link>
         </div>
       );
     }else{
       return (
         <div className="annotation-display fixed">
           
+          <Link to={`/songs/${this.props.songId}/${this.props.refId}/createannotation`}>Create new annotation</Link>
         </div>
       );
     }
