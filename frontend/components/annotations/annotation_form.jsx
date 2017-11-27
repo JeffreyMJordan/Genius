@@ -14,7 +14,10 @@ class AnnotationForm extends React.Component{
   }
 
   handleSubmit(e){
-    this.props.createAnnotation(this.state);
+    this.props.createAnnotation(this.state)
+    .then((res) => {
+      this.props.history.push(`/songs/${this.props.songId}/${this.props.refId}`);
+    });
   }
 
   handleChange(type){
