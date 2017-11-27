@@ -62,3 +62,7 @@
 .yellow-anchor-tag:hover{
   color: #ffff64;
 }
+
+.session-button{
+  cursor: pointer;
+}

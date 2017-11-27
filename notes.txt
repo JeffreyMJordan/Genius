@@ -32,3 +32,5 @@ Overflow scroll - I can limit the maximum height, then have a scroll bar pop up
   (Maybe use this)
 
 Just set the default values to the demo user's credentials
+  Name: Demo User
+  Password: password

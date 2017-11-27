@@ -19,8 +19,8 @@ class Header extends React.Component{
           </div>
           
           <ul className="session-list">
-            <li>Hi {this.props.currentUser.username}</li>
-            <li onClick={() => this.props.logout()}>Logout</li>
+            <li className="session-button">Hi {this.props.currentUser.username}</li>
+            <a className="session-button"><li onClick={() => this.props.logout()}>Logout</li></a>
 
           </ul> 
         </div>
