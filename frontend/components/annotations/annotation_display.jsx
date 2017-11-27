@@ -23,9 +23,10 @@ class AnnotationDisplay extends React.Component{
       return (
         <div className="annotation-display fixed">
           <h2>Fragment: {this.props.fragment}</h2>
+          <h3>Annotations: </h3>
           <ul>
-            {this.props.annotations.map((ann) => <AnnotationIndexItem annotation={ann}/>)}
-          </ul>
+             {this.props.annotations.map((ann) => <AnnotationIndexItem key={ann.id} annotation={ann}/>)}
+           </ul>
           <Link className="new-annotation-link" to={`/songs/${this.props.songId}/${this.props.refId}/createannotation`}>Create new annotation</Link>
         </div>
       );

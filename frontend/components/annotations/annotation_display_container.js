@@ -16,9 +16,16 @@ const findReferent = (refs, refId) => {
 const mapStateToProps = (state, ownProps) => {
   let refId = ownProps.match.params.refId;
   let songId = ownProps.match.params.songId;
-  let song = state.songs[songId];
-  let ref = findReferent(state.referents[songId], refId);
-  let fragment = song.lyrics.slice(ref.start_idx, ref.end_idx);
+  let song = undefined;
+  let ref = undefined;
+  let fragment = undefined;
+
+  if (state.songs[songId]){
+    song = state.songs[songId];
+    ref = findReferent(state.referents[songId], refId);
+    fragment = song.lyrics.slice(ref.start_idx, ref.end_idx);
+  }
+  
   return {
     refId,
     annotations: state.annotations[refId],
