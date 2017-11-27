@@ -29,6 +29,7 @@ class AnnotationForm extends React.Component{
   render(){
     return (
     <div className="fixed">
+      <h2>Fragment: {this.props.fragment}</h2>
       <h2>Submit new annotation</h2>
       <form action="" onSubmit={this.handleSubmit}>
         <input type="text" 
