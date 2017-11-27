@@ -42,7 +42,7 @@ class SessionForm extends React.Component{
 
         
         <h2>{text}</h2>
-        <p>{toggleText} <Link className="yellow-anchor-tag"to="">{altButtonText}</Link></p>
+        <p>{toggleText} <Link className="yellow-anchor-tag" to={linkText} >{altButtonText}</Link></p>
         <form onSubmit={this.handleSubmit} action="">
           
           <h3>Username</h3>  

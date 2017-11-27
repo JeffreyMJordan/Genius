@@ -21,9 +21,15 @@ const App = () => (
   <Route path="/songs/:songId" component={SongDisplayContainer}/>
   <Route exact path="/" component={SongsIndexContainer}/>
   <Route path="/new/song" component={SongFormContainer}/>
+
+  {/* Try defining these routes inside the component I want it to render inside  */}
+  {/* Pokedex might be a good example  */}
+  {/* Pokedex has the routes inside different components */}
   <Route path="/songs/:songId/create/:startIdx/:endIdx" component={ReferentFormContainer}/>
   <Route exact path="/songs/:songId/:refId" component={AnnotationDisplayContainer}/>
   <Route exact path="/songs/:songId/:refId/createannotation" component={AnnotationFormContainer}/>
+  
+  
   <AuthRoute path="/login" component={SessionFormContainer}/>
   <AuthRoute path="/signup" component={SessionFormContainer}/>
 

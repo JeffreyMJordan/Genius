@@ -34,3 +34,35 @@ Overflow scroll - I can limit the maximum height, then have a scroll bar pop up
 Just set the default values to the demo user's credentials
   Name: Demo User
   Password: password
+
+Flex: 2, 1- (Can proportion the stuff properly) (For example, flex:2, flex:1 divides the flex children to take up 2/3 and 1/3 of the flexed 
+respectively div)
+
+How should I go about protecting my routes? Ummmm
+
+I should protect actions intended for logged in users 
+
+Should I re-factor? 
+  Re-factor before you get into bonus features
+  Re-factor embarrasing code 
+
+Shouldn't have console errors 
+  Console errors will cost me points
+
+I can afford to go back and fix stuff 
+
+Hope says comments will take a day, comments will take a day
+
+Having the bulk of the site looking good is more important 
+
+Make it so the annotation stuff can be closed easily 
+
+Should have a button for demo instead of auto-populating 
+
+There's an issue with the sign-in/sign out text on the forms 
+
+Hope says I need a lot of tinkerng with styling 
+  Try to get lyrics really well styled 
+
+Do comments first 
+Hope says to try and get it on the side 

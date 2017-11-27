@@ -56,7 +56,7 @@ class SongLyrics extends React.Component{
       let letter = this.props.song.lyrics[i];
       if(startIdxRefs[i]){
         let ref = startIdxRefs[i];
-        arr.push(<a onClick={this.handleClick(ref.id)}>{this.props.song.lyrics.slice(ref.start_idx, ref.end_idx)}</a>);
+        arr.push(<a key={ref.start_idx} onClick={this.handleClick(ref.id)}>{this.props.song.lyrics.slice(ref.start_idx, ref.end_idx)}</a>);
         i = ref.end_idx-1;
       }else{
         arr.push(letter);

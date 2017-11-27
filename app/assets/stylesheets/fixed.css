@@ -1,12 +1,24 @@
 .fixed{
   position: fixed;
-  background: black; 
-  color: white;
+  background: rgba(255, 255, 255, 0.89); 
+  color: black;
   width: 100%;
   bottom: 0px;
   padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
+  z-index: 10;
+  border-top: 5px solid #99a7ee;
 }
 
-.annotation-display{
-  color: white;
+.fixed-content{
+  left: 10px;
+  width: 50%;
 }
+
+.fixed-fragment{
+  border: 1px solid black;
+}
+

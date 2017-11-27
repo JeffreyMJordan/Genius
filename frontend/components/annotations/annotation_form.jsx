@@ -29,7 +29,8 @@ class AnnotationForm extends React.Component{
   render(){
     return (
     <div className="fixed">
-      <h2>Fragment: {this.props.fragment}</h2>
+      <div className="fixed-content">
+      <h3 className="fixed-fragment">{this.props.fragment}</h3>
       <h2>Submit new annotation</h2>
       <form action="" onSubmit={this.handleSubmit}>
         <input type="text" 
@@ -38,6 +39,7 @@ class AnnotationForm extends React.Component{
         onChange={this.handleChange('body')}/>
 
       </form>
+      </div>
     </div>);
   }
 
