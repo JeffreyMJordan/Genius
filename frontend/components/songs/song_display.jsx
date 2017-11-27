@@ -22,7 +22,6 @@ class SongDisplay extends React.Component{
 
   render(){
     if(this.props.artist && this.props.song && this.props.album){
-      console.log(this.props.referents);
       return (
         <div className="song-display">
           <SongDisplayHeader song={this.props.song} album={this.props.album} artist={this.props.artist}/>

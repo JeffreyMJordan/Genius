@@ -7,6 +7,7 @@ import {AuthRoute} from "../util/route_util";
 import SongDisplayContainer from "./songs/song_display_container";
 import SongFormContainer from "./songs/song_form_container";
 import ReferentFormContainer from "./referents/referent_form_container";
+import AnnotationDisplayContainer from './annotations/annotation_display_container';
 
 
 //Build giant switch statement that contains and handles logic for all the routes
@@ -20,6 +21,8 @@ const App = () => (
   <Route exact path="/" component={SongsIndexContainer}/>
   <Route path="/new/song" component={SongFormContainer}/>
   <Route path="/songs/:songId/create/:startIdx/:endIdx" component={ReferentFormContainer}/>
+  <Route exact path="/songs/:songId/:refId" component={AnnotationDisplayContainer}/>
+
   <AuthRoute path="/login" component={SessionFormContainer}/>
   <AuthRoute path="/signup" component={SessionFormContainer}/>
 

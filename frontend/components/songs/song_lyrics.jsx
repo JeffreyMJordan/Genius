@@ -1,6 +1,7 @@
 import React from "react";
 import {Link, withRouter} from "react-router-dom";
-
+import {AnnotationDisplay} from '../annotations/annotation_display';
+import {Route} from "react-router-dom";
 
 
 class SongLyrics extends React.Component{
@@ -19,7 +20,10 @@ class SongLyrics extends React.Component{
   handleHighlight(e){
     let startIdx = window.getSelection().getRangeAt(0).startOffset;
     let endIdx = window.getSelection().getRangeAt(0).endOffset;
-    this.props.history.push(`/songs/${this.props.match.params.songId}/create/${startIdx}/${endIdx}`);
+    if(startIdx!=endIdx){
+      this.props.history.push(`/songs/${this.props.match.params.songId}/create/${startIdx}/${endIdx}`);
+    }
+    
   }
 
   createIdxRefs(){
@@ -65,10 +69,10 @@ class SongLyrics extends React.Component{
     return (
     <div onMouseUp={this.handleHighlight} >
       <div
-        onClick={(e) => console.log(e.target)}
         className="ghost">{this.props.song.lyrics}
       </div>
       <div className="lyrics">{this.createLyrics()}</div>
+      {/* <Route path="/songs/:songId/:refId" component={AnnotationDisplay}/> */}
     </div>);
   }
 }

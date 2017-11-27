@@ -1,9 +1,9 @@
 import React from "react";
+import {withRouter} from "react-router-dom";
 
 class ReferentForm extends React.Component{
   constructor(props){
     super(props);
-    console.log(props);
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -18,9 +18,12 @@ class ReferentForm extends React.Component{
 
   render(){
     return (
-      <button onClick={this.handleClick}>Create Referent</button>
+      <div className="fixed">
+        <h2>Fragment: {this.props.fragment}</h2>
+        <button onClick={this.handleClick}>Start Annotation</button>
+      </div>
     );
   }
 }
 
-export default ReferentForm;
+export default withRouter(ReferentForm);

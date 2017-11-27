@@ -9,7 +9,6 @@ class Api::AnnotationsController < ApplicationController
   end 
 
   def show 
-    debugger
     @annotation = Annotation.find_by_id(params[:id])
     render :show
   end 
