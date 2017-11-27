@@ -24,13 +24,17 @@ class SessionForm extends React.Component{
 
   render(){
     let text = this.props.formType==="login"? "Sign in to Genius" : "Sign up for Genius";
+    let toggleText = this.props.formType==="login"? "Don't have an account? " : "Already have an account? ";
+    let linkText = this.props.formType==="login"? "/signup" : "/login";
     let buttonText = this.props.formType==="login"? "Sign In" : "Sign Up";
+    let altButtonText = this.props.formType==="login"? "Sign Up" : "Sign In";
     return (
       <div className="song-form">
         {/* <div className="modal-screen"></div> */}
 
         
         <h2>{text}</h2>
+        <p>{toggleText} <Link className="yellow-anchor-tag"to="">{altButtonText}</Link></p>
         <form onSubmit={this.handleSubmit} action="">
           
           <h3>Username</h3>  

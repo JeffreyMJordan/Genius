@@ -25,3 +25,10 @@ Payload Api routes
   
 
 Maybe have a blank album, artist in the state
+
+
+Maybe have it so you click the annotation to see the comments 
+Overflow scroll - I can limit the maximum height, then have a scroll bar pop up 
+  (Maybe use this)
+
+Just set the default values to the demo user's credentials

@@ -53,3 +53,12 @@
 .submit-button:hover{
   background: lightgray;
 }
+
+.yellow-anchor-tag{
+  font-family: Inconsolata,sans-serif;
+  color: white;
+}
+
+.yellow-anchor-tag:hover{
+  color: #ffff64;
+}
