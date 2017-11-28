@@ -14,6 +14,16 @@ class Api::ReferentsController < ApplicationController
     render :show
   end 
 
+  def destroy
+    @referent = Referent.find_by_id(params[:id])
+    if @referent 
+      @referent.destroy 
+      render :show
+    else 
+      render json: ["That referent doesn't exist"], status: 422
+    end 
+  end 
+
 
   private 
   def referent_params 

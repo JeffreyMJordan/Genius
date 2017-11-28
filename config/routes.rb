@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :songs, only: [:create, :show, :destroy, :index]
     resources :albums, only: [:create, :show, :index]
     resources :artists, only: [:create, :show, :index]
-    resources :referents, only: [:create, :show]
+    resources :referents, only: [:create, :show, :destroy]
     resources :annotations, only: [:create, :show, :destroy]
     resources :comments, only: [:create, :show, :destroy]
     get 'annotations_by_referent', to: 'annotations#by_referent'
