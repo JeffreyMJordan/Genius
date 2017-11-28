@@ -19,7 +19,7 @@ class AnnotationIndexItem extends React.Component{
   render(){
     let deleteButton = undefined;
     if(this.props.annotation.author_id === this.props.currentUser.id){
-      deleteButton = (<a onClick={this.handleClick}>Delete</a>);
+      deleteButton = (<a className="annotation-delete" onClick={this.handleClick}>Delete</a>);
     }
 
     return (

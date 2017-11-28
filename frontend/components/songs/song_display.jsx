@@ -36,7 +36,7 @@ class SongDisplay extends React.Component{
       if(this.props.song.creator_id===this.props.currentUser.id){
         return (
           <div className="song-display">
-            <SongDisplayHeader song={this.props.song} album={this.props.album} artist={this.props.artist}/>
+            <SongDisplayHeader canDelete={true} deleteSong={this.deleteSong} song={this.props.song} album={this.props.album} artist={this.props.artist}/>
               <div className="song-display-content">
                 <div className="lyrics-container">
                   <h1>Lyrics</h1>
@@ -49,7 +49,6 @@ class SongDisplay extends React.Component{
                 <Route path="/songs/:songId/create/:startIdx/:endIdx" component={ReferentFormContainer}/>
                 <Route exact path="/songs/:songId/:refId" component={AnnotationDisplayContainer}/>
                 <LoggedInRoute exact path="/songs/:songId/:refId/createannotation" component={AnnotationFormContainer}/>
-                <input type="submit" onClick={this.deleteSong} value="Delete Song"/>
               </div>
           </div>
         );

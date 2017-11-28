@@ -6,6 +6,10 @@ class SongDisplayHeader extends React.Component{
   }
 
   render(){
+    let deleteButton = undefined;
+    if (this.props.canDelete){
+      deleteButton = (<a className="delete-song-button" type="submit" onClick={this.props.deleteSong}>Delete Song</a>);
+    }
     return (
     <div className="song-display-header" style={{backgroundImage: `url(${this.props.album.image_url})`}}>
       <div className="song-display-header-inner">
@@ -14,6 +18,7 @@ class SongDisplayHeader extends React.Component{
             <li className="inner-song-title">{this.props.song.title}</li>
             <li className="inner-artist-name">{this.props.artist.name}</li>
           </ul>
+          {deleteButton}
       </div>
     </div>);
   }
