@@ -1,4 +1,5 @@
 import React from "react";
+import {withRouter} from "react-router-dom";
 
 class AnnotationIndexItem extends React.Component{
   constructor(props){
@@ -9,7 +10,10 @@ class AnnotationIndexItem extends React.Component{
 
 
   handleClick(){
-    this.props.deleteAnnotation(this.props.annotation.id);
+    this.props.deleteAnnotation(this.props.annotation.id)
+      .then((res) => {
+        this.props.history.push(`/songs/${this.props.songId}`);
+        window.location.reload();});
   }
 
   render(){
@@ -27,4 +31,4 @@ class AnnotationIndexItem extends React.Component{
 
 }
 
-export default AnnotationIndexItem;
+export default withRouter(AnnotationIndexItem);

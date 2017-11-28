@@ -43,6 +43,7 @@ class SongDisplay extends React.Component{
                   <SongLyrics 
                   song={this.props.song}
                   referents={this.props.referents}
+                  deleteReferent={this.props.deleteReferent}
                   />
                 </div>
                 <Route path="/songs/:songId/create/:startIdx/:endIdx" component={ReferentFormContainer}/>

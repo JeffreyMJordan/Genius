@@ -3,6 +3,9 @@ import {fetchSong, deleteSong} from "../../actions/song_actions";
 import SongDisplay from './song_display';
 import {withRouter} from "react-router-dom";
 import { fetchPayloadBySongID } from "../../actions/payload_actions";
+import {deleteReferent} from "../../actions/referent_actions";
+
+
 
 const mapStateToProps = (state, ownProps) => {
   let songId = ownProps.match.params.songId;
@@ -30,7 +33,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetchSong: (id) => dispatch(fetchSong(id)),
     deleteSong: (id) => dispatch(deleteSong(id)),
-    fetchPayloadBySongID: (id) => dispatch(fetchPayloadBySongID(id))
+    fetchPayloadBySongID: (id) => dispatch(fetchPayloadBySongID(id)),
+    deleteReferent: (id) => dispatch(deleteReferent(id))
   };
 };
 
