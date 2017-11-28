@@ -59,11 +59,11 @@ class SessionForm extends React.Component{
         <form onSubmit={this.handleSubmit} action="">
           
           <h3>Username</h3>  
-          <input  type="text" placeholder="Username" onChange={this.handleChange('username')} value={this.state.username}/>
+          <input  type="text" onChange={this.handleChange('username')} value={this.state.username}/>
           
           
           <h3>Password</h3>
-          <input  type="password" placeholder="Password" onChange={this.handleChange('password')} value={this.state.password}/>
+          <input  type="password" onChange={this.handleChange('password')} value={this.state.password}/>
           
           
           <input className="song-submit" type="submit" value={buttonText}/>
