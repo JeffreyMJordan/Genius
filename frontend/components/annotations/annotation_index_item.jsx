@@ -7,7 +7,7 @@ class AnnotationIndexItem extends React.Component{
 
   render(){
     return (
-      <li>
+      <li className="annotation-index-item">
         {this.props.annotation.body}
       </li>
     );

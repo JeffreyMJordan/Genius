@@ -24,8 +24,8 @@ class ReferentForm extends React.Component{
     return (
       <div className="fixed">
         <div className="fixed-content">
-          <h3 className="fixed-fragment">Fragment: {this.props.fragment}</h3>
-          <button onClick={this.handleClick}>Start Annotation</button>
+          <h3 className="fixed-fragment">{this.props.fragment}</h3>
+          <a className="new-annotation-button" onClick={this.handleClick}>Start Annotation</a>
         </div>
       </div>
     );

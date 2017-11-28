@@ -31,14 +31,16 @@ class AnnotationForm extends React.Component{
     <div className="fixed">
       <div className="fixed-content">
       <h3 className="fixed-fragment">{this.props.fragment}</h3>
-      <h2>Submit new annotation</h2>
+      <h2>New annotation</h2>
       <form action="" onSubmit={this.handleSubmit}>
-        <input type="text" 
+        <textarea type="text" 
         placeholder="Annotation" 
         value={this.state.body}
         onChange={this.handleChange('body')}/>
 
+        <a><input type="submit" className="new-annotation-button" value="Create Annotation"/></a>
       </form>
+      <br/>
       </div>
     </div>);
   }

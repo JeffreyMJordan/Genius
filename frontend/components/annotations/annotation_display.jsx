@@ -23,12 +23,13 @@ class AnnotationDisplay extends React.Component{
       return (
         <div className="fixed">
           <div className="fixed-content">
-            <h2 className="fixed-fragment">Fragment: {this.props.fragment}</h2>
-            <h3>Annotations: </h3>
+            <h3 className="fixed-fragment">{this.props.fragment}</h3>
+            <h3 className="bottom-line">Annotations</h3>
             <ul>
               {this.props.annotations.map((ann) => <AnnotationIndexItem key={ann.id} annotation={ann}/>)}
             </ul>
-            <Link className="new-annotation-link" to={`/songs/${this.props.songId}/${this.props.refId}/createannotation`}>Create new annotation</Link>
+            <br/>
+            <Link className="new-annotation-button" to={`/songs/${this.props.songId}/${this.props.refId}/createannotation`}>Create new annotation</Link>
           </div>
         </div>
       );
@@ -36,8 +37,9 @@ class AnnotationDisplay extends React.Component{
       return (
         <div className="fixed">
           <div className="fixed-content">
-            <h3 className="fixed-fragment">Fragment: {this.props.fragment}</h3>
-            <Link className="new-annotation-link" to={`/songs/${this.props.songId}/${this.props.refId}/createannotation`}>Create new annotation</Link>
+            <h3 className="fixed-fragment">{this.props.fragment}</h3>
+            <br/>
+            <Link className="new-annotation-button" to={`/songs/${this.props.songId}/${this.props.refId}/createannotation`}>Create new annotation</Link>
           </div>
         </div>
       );
