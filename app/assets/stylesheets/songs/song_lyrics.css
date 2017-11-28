@@ -1,9 +1,12 @@
 .lyrics{
   position: relative;
-  width: 350px;
+  width: 400px;
+  font-size: 20px;
   color: black;
   white-space: pre-wrap;
   padding-bottom: 300px;
+  line-height: 200%;
+  padding: 10px;
 }
 
 .lyrics a {
@@ -26,8 +29,12 @@
 .ghost{
   white-space: pre-wrap;
   color: transparent;
+  font-size: 20px;
   z-index: 3;
   position: absolute;
-  width: 350px;
+  width: 400px;
+  line-height: 200%;
+  padding: 10px;
 }
+
 

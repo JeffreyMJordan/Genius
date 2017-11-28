@@ -38,29 +38,29 @@ class SongForm extends React.Component{
           
           <h3>Title</h3>
           <input type="text" 
-          placeholder="Title" 
+          
           value={this.state.title} 
           onChange={this.handleChange('title')}/>
           
           <h3>Album</h3>
           <input type="text" 
-          placeholder="Album"
+          
           value={this.state.albumName}
           onChange={this.handleChange('albumName')}/>
 
           <h3>Album Image URL</h3>
           <input type="text"  
-          placeholder="Album Image URL"
+          
           value={this.state.albumImageURL}
           onChange={this.handleChange('albumImageURL')}/>
 
           <h3>Artist</h3>
-          <input type="text" placeholder="Artist"
+          <input type="text" 
           value={this.state.artistName}
           onChange={this.handleChange('artistName')}/>
 
           <h3>Lyrics</h3>
-          <textarea type="text" placeholder="Lyrics"
+          <textarea type="text" 
           value={this.state.lyrics}
           onChange={this.handleChange("lyrics")}/>
 
