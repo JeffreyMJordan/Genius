@@ -10,8 +10,12 @@ class Api::CommentsController < ApplicationController
 
   def find_by_annotation
     @annotation = Annotation.find_by_id(params[:id])
-    @comments = @annotation.comments 
-    render :index
+    if @annotation
+      @comments = @annotation.comments 
+      render :index
+    else 
+      render json: ["No such annotation"], status: 422
+    end 
   end 
 
   def show 

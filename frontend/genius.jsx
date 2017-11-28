@@ -10,6 +10,7 @@ import Root from './components/root';
 import {fetchPayloads, fetchPayloadBySongID} from './actions/payload_actions';
 import {createReferent, fetchReferent, deleteReferent} from './actions/referent_actions';
 import {createAnnotation, fetchAnnotation, fetchAnnotationsByReferent, deleteAnnotation} from './actions/annotation_actions';
+import {createComment, fetchComment, fetchCommentsByAnnotation, deleteComment} from './actions/comment_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -22,11 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   
-  window.createAnnotation = createAnnotation;
-  window.fetchAnnotation = fetchAnnotation;
-  window.fetchAnnotationsByReferent = fetchAnnotationsByReferent;
-  window.deleteReferent = deleteReferent;
-  window.deleteAnnotation = deleteAnnotation;
+  window.createComment = createComment;
+  window.fetchComment = fetchComment;
+  window.fetchCommentsByAnnotation = fetchCommentsByAnnotation;
+  window.deleteComment = deleteComment;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   

@@ -6,6 +6,7 @@ import ArtistsReducer from './artists_reducer';
 import AlbumsReducer from './albums_reducer';
 import ReferentsReducer from './referents_reducer';
 import AnnotationsReducer from './annotations_reducer';
+import CommentsReducer from './comments_reducer';
 
 export default combineReducers({
   session: SessionReducer,
@@ -14,6 +15,7 @@ export default combineReducers({
   artists: ArtistsReducer,
   albums: AlbumsReducer,
   referents: ReferentsReducer,
-  annotations: AnnotationsReducer
+  annotations: AnnotationsReducer,
+  comments: CommentsReducer
 });
 
