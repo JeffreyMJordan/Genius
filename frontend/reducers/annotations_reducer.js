@@ -1,5 +1,5 @@
 import {merge} from "lodash";
-import {RECEIVE_ANNOTATION, RECEIVE_ANNOTATIONS} from '../actions/annotation_actions';
+import {RECEIVE_ANNOTATION, RECEIVE_ANNOTATIONS, REMOVE_ANNOTATION} from '../actions/annotation_actions';
 
 
 //In the state, we map referent_ids to annotation arrays
@@ -22,6 +22,10 @@ export default (state={}, action) => {
         newState2[action.refId] = [];
       }
       return newState2;
+    case REMOVE_ANNOTATION:
+      let removeState = merge({}, state);
+      removeState[action.annotation.referent_id] = [];
+      return removeState;
     default: 
       return state;
   }

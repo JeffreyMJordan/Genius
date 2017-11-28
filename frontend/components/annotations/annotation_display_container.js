@@ -23,7 +23,10 @@ const mapStateToProps = (state, ownProps) => {
   if (state.songs[songId]){
     song = state.songs[songId];
     ref = findReferent(state.referents[songId], refId);
-    fragment = song.lyrics.slice(ref.start_idx, ref.end_idx);
+    if (ref){
+      fragment = song.lyrics.slice(ref.start_idx, ref.end_idx);
+    }
+    
   }
   
   return {

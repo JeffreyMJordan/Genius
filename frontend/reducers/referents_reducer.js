@@ -1,6 +1,6 @@
 import {merge} from "lodash";
 import {RECEIVE_PAYLOAD} from "../actions/payload_actions";
-import {RECEIVE_REFERENT} from "../actions/referent_actions";
+import {RECEIVE_REFERENT, REMOVE_REFERENT} from "../actions/referent_actions";
 
 
 //In the state, referent arrays are mapped to song ids
@@ -11,6 +11,11 @@ export default (state={}, action) => {
       let newState2 = merge({}, state);
       newState2[action.ref.song_id].push(action.ref);
       return newState2;
+    case REMOVE_REFERENT:
+      debugger;
+      let removeState = merge({}, state);
+      removeState[action.ref.song_id] = [];
+      return removeState;
     case RECEIVE_PAYLOAD:
       let newState = merge({}, state);
       if(action.payload.referents[0]){

@@ -12,3 +12,10 @@ export const fetchReferent = (id) => {
     url: `api/referents/${id}`
   });
 };
+
+export const deleteReferent = (id) => {
+  return $.ajax({
+    method: "DELETE",
+    url: `api/referents/${id}`
+  });
+};
