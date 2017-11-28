@@ -46,7 +46,7 @@ class Header extends React.Component{
         <div className="header-top">
 
           <div className="searchbar-div">
-            <input class="searchbar" type="text" defaultValue="Search lyrics and more"/>
+            <input className="searchbar" type="text" defaultValue="Search lyrics and more"/>
           </div>
 
           <div className="logo">
