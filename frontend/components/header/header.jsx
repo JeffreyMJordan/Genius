@@ -7,7 +7,7 @@ class Header extends React.Component{
   }
 
   render(){
-    if(this.props.currentUser){
+    if(this.props.currentUser.id){
       return (
         <div className="header">
         <div className="header-top">

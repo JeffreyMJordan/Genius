@@ -25,7 +25,7 @@ const LoggedIn = ({component: Component, path, loggedIn}) => (
 
 const mapStateToProps = (state) => {
   return {
-    loggedIn: Boolean(state.session.currentUser)
+    loggedIn: Boolean(state.session.currentUser.id)
   };
 };
 

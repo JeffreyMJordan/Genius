@@ -14,9 +14,8 @@ export default (state={}, action) => {
       return newState;
     case REMOVE_SONG: 
       let newState1 = merge({}, state);
-      newState1[action.songId] = undefined;
+      delete newState1[action.songId];
       return newState1;
-
     case RECEIVE_PAYLOADS:
       let songs = merge({}, state);
       action.payloads.forEach((payload) => {

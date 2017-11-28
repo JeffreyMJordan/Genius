@@ -3,7 +3,7 @@ import {merge} from "lodash";
 import {RECEIVE_CURRENT_USER} from '../actions/session_actions';
 
 const _nullUser = {
-  currentUser: null
+  currentUser: {id: null, username: null}
 };
 
 export default (state=_nullUser, action) => {

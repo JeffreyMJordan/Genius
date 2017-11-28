@@ -20,7 +20,8 @@ const mapStateToProps = (state, ownProps) => {
     song: song,
     album: album,
     artist: artist,
-    referents: referents
+    referents: referents,
+    currentUser: state.session.currentUser
   };
 };
 
