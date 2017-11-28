@@ -1,24 +1,21 @@
 .fixed{
-  position: fixed;
-  background: rgba(255, 255, 255, 0.89); 
   color: black;
-  width: 100%;
   bottom: 0px;
-  padding-bottom: 50px;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
-  align-items: center;
   z-index: 10;
-  border-top: 5px solid #99a7ee;
+  flex: 5;
+  margin-top: 60px;
+  padding-left: 10px;
 }
 
 .fixed-content{
-  left: 10px;
-  width: 50%;
+  position: fixed;
+  padding-right: 10px;
+  width: 40%
 }
 
 .fixed-fragment{
-  border: 1px solid black;
+  border: 3px solid #99a7ee;
 }
 

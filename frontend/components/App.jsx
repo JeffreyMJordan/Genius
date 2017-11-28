@@ -3,7 +3,7 @@ import HeaderContainer from './header/header_container';
 import SessionFormContainer from './session_form/session_form_container';
 import SongsIndexContainer from './songs/songs_index_container';
 import {Route} from "react-router-dom";
-import {AuthRoute} from "../util/route_util";
+import {AuthRoute, LoggedInRoute} from "../util/route_util";
 import SongDisplayContainer from "./songs/song_display_container";
 import SongFormContainer from "./songs/song_form_container";
 import ReferentFormContainer from "./referents/referent_form_container";
@@ -25,9 +25,9 @@ const App = () => (
   {/* Try defining these routes inside the component I want it to render inside  */}
   {/* Pokedex might be a good example  */}
   {/* Pokedex has the routes inside different components */}
-  <Route path="/songs/:songId/create/:startIdx/:endIdx" component={ReferentFormContainer}/>
+  {/* <LoggedInRoute path="/songs/:songId/create/:startIdx/:endIdx" component={ReferentFormContainer}/>
   <Route exact path="/songs/:songId/:refId" component={AnnotationDisplayContainer}/>
-  <Route exact path="/songs/:songId/:refId/createannotation" component={AnnotationFormContainer}/>
+  <LoggedInRoute exact path="/songs/:songId/:refId/createannotation" component={AnnotationFormContainer}/> */}
   
   
   <AuthRoute path="/login" component={SessionFormContainer}/>

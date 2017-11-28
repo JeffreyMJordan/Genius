@@ -2,6 +2,11 @@ import React from "react";
 import SongDisplayHeader from './song_display_header';
 import SongLyrics from './song_lyrics';
 import {withRouter} from "react-router-dom";
+import {LoggedInRoute} from "../../util/route_util";
+import {Route} from "react-router-dom";
+import AnnotationDisplayContainer from '../annotations/annotation_display_container';
+import ReferentFormContainer from "../referents/referent_form_container";
+import AnnotationFormContainer from "../annotations/annotation_form_container";
 
 class SongDisplay extends React.Component{
   constructor(props){
@@ -25,13 +30,18 @@ class SongDisplay extends React.Component{
       return (
         <div className="song-display">
           <SongDisplayHeader song={this.props.song} album={this.props.album} artist={this.props.artist}/>
-          <div className="lyrics-container">
-            <h1>Lyrics</h1>
-            <SongLyrics 
-            song={this.props.song}
-            referents={this.props.referents}
-            />
-          </div>
+            <div className="song-display-content">
+              <div className="lyrics-container">
+                <h1>Lyrics</h1>
+                <SongLyrics 
+                song={this.props.song}
+                referents={this.props.referents}
+                />
+              </div>
+              <LoggedInRoute path="/songs/:songId/create/:startIdx/:endIdx" component={ReferentFormContainer}/>
+              <Route exact path="/songs/:songId/:refId" component={AnnotationDisplayContainer}/>
+              <LoggedInRoute exact path="/songs/:songId/:refId/createannotation" component={AnnotationFormContainer}/>
+            </div>
         </div>
       );
     }else{
