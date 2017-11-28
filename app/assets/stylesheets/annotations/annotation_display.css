@@ -20,6 +20,7 @@
 
 .annotation-delete{
   border: 2px solid black;
-  padding: 5px;
   cursor: pointer;
+  padding: 5px;
+  height: 15px;
 }

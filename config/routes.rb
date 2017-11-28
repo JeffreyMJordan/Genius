@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :referents, only: [:create, :show, :destroy]
     resources :annotations, only: [:create, :show, :destroy]
     resources :comments, only: [:create, :show, :destroy]
+    get 'comment_by_annotation', to: 'comments#find_by_annotation'
     get 'annotations_by_referent', to: 'annotations#by_referent'
     get 'payloads', to: 'payloads#send_payloads'
     get 'payloads/songs', to: 'payloads#send_payload_by_song_id'
