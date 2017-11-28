@@ -7,6 +7,7 @@ import {Route} from "react-router-dom";
 import AnnotationDisplayContainer from '../annotations/annotation_display_container';
 import ReferentFormContainer from "../referents/referent_form_container";
 import AnnotationFormContainer from "../annotations/annotation_form_container";
+import CommentDisplayContainer from '../comments/comment_display_container';
 
 class SongDisplay extends React.Component{
   constructor(props){
@@ -48,6 +49,7 @@ class SongDisplay extends React.Component{
                 </div>
                 <Route path="/songs/:songId/create/:startIdx/:endIdx" component={ReferentFormContainer}/>
                 <Route exact path="/songs/:songId/:refId" component={AnnotationDisplayContainer}/>
+                {/* <Route exact path="/songs/:songId/comments/:annId" component={CommentsDisplayContainer}/> */}
                 <LoggedInRoute exact path="/songs/:songId/:refId/createannotation" component={AnnotationFormContainer}/>
               </div>
           </div>
@@ -66,6 +68,7 @@ class SongDisplay extends React.Component{
                 </div>
                 <Route path="/songs/:songId/create/:startIdx/:endIdx" component={ReferentFormContainer}/>
                 <Route exact path="/songs/:songId/:refId" component={AnnotationDisplayContainer}/>
+                {/* <Route exact path="/songs/:songId/comments/:annId" component={CommentsDisplayContainer}/> */}
                 <LoggedInRoute exact path="/songs/:songId/:refId/createannotation" component={AnnotationFormContainer}/>
                 
               </div>

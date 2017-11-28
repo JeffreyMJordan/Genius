@@ -50,6 +50,7 @@
   border: 2px solid black;
 }
 
+
 .submit-button:hover{
   background: lightgray;
 }
@@ -66,4 +67,15 @@
 .session-button{
   cursor: pointer;
   
+}
+
+.demo-user{
+  border: 2px solid white;
+  padding: 5px;
+}
+
+.demo-user:hover{
+  color: #ffff64;
+  border: 2px solid #ffff64;
+  cursor: pointer;
 }

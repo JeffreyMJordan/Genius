@@ -5,7 +5,7 @@ class AnnotationIndexItem extends React.Component{
   constructor(props){
     super(props);
     this.handleClick = this.handleClick.bind(this);
-    console.log(this.props);
+    this.showComments = this.showComments.bind(this);
   }
 
 
@@ -16,6 +16,10 @@ class AnnotationIndexItem extends React.Component{
         window.location.reload();});
   }
 
+  showComments(){
+    this.props.history.push(`/songs/${this.props.songId}/comments/${this.props.annotation.id}`);
+  }
+
   render(){
     let deleteButton = undefined;
     if(this.props.annotation.author_id === this.props.currentUser.id){
@@ -24,7 +28,7 @@ class AnnotationIndexItem extends React.Component{
 
     return (
       <li className="annotation-index-item">
-        {this.props.annotation.body} {deleteButton}
+        <a onClick={this.showComments}>{this.props.annotation.body}</a> {deleteButton}
       </li>
     );
   }

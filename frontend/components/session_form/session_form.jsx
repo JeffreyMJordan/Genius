@@ -5,18 +5,18 @@ class SessionForm extends React.Component{
   constructor(props){
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    if (this.props.formType==="login"){
-      this.state = {
-        username: "Demo User",
-        password: "password"
-      };
-    }else{
-      this.state = {
-        username: "",
-        password: ""
-      }; 
-    }
     
+    this.state = {
+      username: "",
+      password: ""
+    }; 
+    
+    this.demoUserClick = this.demoUserClick.bind(this);
+    
+  }
+
+  componentWillMount(){
+    this.props.removeErrors();
   }
 
   handleSubmit(e){
@@ -30,12 +30,21 @@ class SessionForm extends React.Component{
     };
   }
 
+  demoUserClick(e){
+    e.preventDefault();
+    this.setState({
+      username: "Demo User",
+      password: "password"
+    });
+  }
+
   render(){
     let text = this.props.formType==="login"? "Sign in to Genius" : "Sign up for Genius";
     let toggleText = this.props.formType==="login"? "Don't have an account? " : "Already have an account? ";
     let linkText = this.props.formType==="login"? "/signup" : "/login";
     let buttonText = this.props.formType==="login"? "Sign In" : "Sign Up";
     let altButtonText = this.props.formType==="login"? "Sign Up" : "Sign In";
+    let demoUser = this.props.formType==="login"? (<div className="demo-user" onClick={this.demoUserClick}>Demo User</div>) : (<div/>);
     return (
       <div className="song-form">
         
@@ -44,6 +53,8 @@ class SessionForm extends React.Component{
         </ul>
         
         <h2>{text}</h2>
+        {demoUser}
+
         <p>{toggleText} <Link className="yellow-anchor-tag" to={linkText} >{altButtonText}</Link></p>
         <form onSubmit={this.handleSubmit} action="">
           

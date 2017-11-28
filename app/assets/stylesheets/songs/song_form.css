@@ -35,3 +35,8 @@
   background-color: #ccc;
 
 }
+
+.song-submit:hover{
+  background-color: #ffff64;
+  cursor: pointer;
+}
