@@ -20,7 +20,7 @@ const App = () => (
   
   <Route path="/songs/:songId" component={SongDisplayContainer}/>
   <Route exact path="/" component={SongsIndexContainer}/>
-  <Route path="/new/song" component={SongFormContainer}/>
+  <LoggedInRoute path="/new/song" component={SongFormContainer}/>
 
   {/* Try defining these routes inside the component I want it to render inside  */}
   {/* Pokedex might be a good example  */}

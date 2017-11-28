@@ -1,5 +1,5 @@
 import React from "react";
-import {withRouter} from "react-router-dom";
+import {withRouter, Redirect} from "react-router-dom";
 
 class ReferentForm extends React.Component{
   constructor(props){
@@ -12,11 +12,16 @@ class ReferentForm extends React.Component{
     ref["start_idx"] = this.props.match.params.startIdx;
     ref["end_idx"] = this.props.match.params.endIdx;
     ref["song_id"] = this.props.song.id;
-    ref["creator_id"] = this.props.currentUser.id;
-    this.props.createReferent(ref)
+    if (this.props.currentUser){
+      ref["creator_id"] = this.props.currentUser.id;
+      this.props.createReferent(ref)
       .then((res) => {
         return this.props.history.push(`/songs/${this.props.match.params.songId}/${res.ref.id}/createannotation`);
       });
+    }else{
+      this.props.history.push(`/login`);
+    }
+    
 
   }
 

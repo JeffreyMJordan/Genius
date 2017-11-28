@@ -38,7 +38,7 @@ class SongDisplay extends React.Component{
                 referents={this.props.referents}
                 />
               </div>
-              <LoggedInRoute path="/songs/:songId/create/:startIdx/:endIdx" component={ReferentFormContainer}/>
+              <Route path="/songs/:songId/create/:startIdx/:endIdx" component={ReferentFormContainer}/>
               <Route exact path="/songs/:songId/:refId" component={AnnotationDisplayContainer}/>
               <LoggedInRoute exact path="/songs/:songId/:refId/createannotation" component={AnnotationFormContainer}/>
             </div>
