@@ -13,6 +13,16 @@ class Api::AnnotationsController < ApplicationController
     render :show
   end 
 
+  def destroy
+    @annotation = Annotation.find_by_id(params[:id])
+    if @annotation 
+      @annotation.destroy
+      render :show
+    else 
+      render json: ["That annotation doesn't exist"], status: 422
+    end 
+  end 
+
   def by_referent
     @referent = Referent.find_by_id(params[:id])
     @annotations = @referent.annotations
