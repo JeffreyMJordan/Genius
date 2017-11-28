@@ -18,6 +18,7 @@ class AnnotationDisplay extends React.Component{
   }
 
   render(){
+
     if(this.props.annotations){
       
       return (
@@ -26,7 +27,7 @@ class AnnotationDisplay extends React.Component{
             <h3 className="fixed-fragment">{this.props.fragment}</h3>
             <h3 className="bottom-line">Annotations</h3>
             <ul>
-              {this.props.annotations.map((ann) => <AnnotationIndexItem key={ann.id} annotation={ann}/>)}
+              {this.props.annotations.map((ann) => <AnnotationIndexItem key={ann.id} annotation={ann} currentUser={this.props.currentUser} deleteAnnotation={this.props.deleteAnnotation}/>)}
             </ul>
             <br/>
             <Link className="new-annotation-button" to={`/songs/${this.props.songId}/${this.props.refId}/createannotation`}>Create new annotation</Link>

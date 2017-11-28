@@ -29,7 +29,7 @@ export const login = (user) => (dispatch) => {
 
 export const logout = () => (dispatch) => {
   return SessionAPIUtil.logout()
-    .then(() => dispatch(receiveCurrentUser(null)),
+    .then(() => dispatch(receiveCurrentUser({id: null, username: null})),
     (errors) => dispatch(receiveSessionErrors(errors.responseJSON)));
 };
 

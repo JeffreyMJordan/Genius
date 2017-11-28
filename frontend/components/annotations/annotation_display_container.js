@@ -1,7 +1,7 @@
 import AnnotationDisplay from './annotation_display';
 import {connect} from "react-redux";
-import {fetchAnnotation, fetchAnnotationsByReferent} from "../../actions/annotation_actions";
-import {withRouter }from "react-router-dom";
+import {fetchAnnotation, fetchAnnotationsByReferent, deleteAnnotation} from "../../actions/annotation_actions";
+import {withRouter} from "react-router-dom";
 
 const findReferent = (refs, refId) => {
   for(var i = 0; i<refs.length; i++){
@@ -19,6 +19,7 @@ const mapStateToProps = (state, ownProps) => {
   let song = undefined;
   let ref = undefined;
   let fragment = undefined;
+  let currentUser = state.session.currentUser;
 
   if (state.songs[songId]){
     song = state.songs[songId];
@@ -26,21 +27,22 @@ const mapStateToProps = (state, ownProps) => {
     if (ref){
       fragment = song.lyrics.slice(ref.start_idx, ref.end_idx);
     }
-    
   }
   
   return {
     refId,
     annotations: state.annotations[refId],
     songId,
-    fragment
+    fragment, 
+    currentUser
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchAnnotation: (id) => dispatch(fetchAnnotation(id)),
-    fetchAnnotationsByReferent: (refId) => dispatch(fetchAnnotationsByReferent(refId))
+    fetchAnnotationsByReferent: (refId) => dispatch(fetchAnnotationsByReferent(refId)),
+    deleteAnnotation: (id) => dispatch(deleteAnnotation(id))
   };
 };
 
