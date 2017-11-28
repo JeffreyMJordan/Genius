@@ -7,11 +7,11 @@ export default (state=[], action) => {
   switch(action.type){
     
     case RECEIVE_CURRENT_USER: 
-      return merge({}, {errors: null});
+      return [];
     case RECEIVE_SESSION_ERRORS:
-      return merge({}, {errors: action.errors});
+      return action.errors;
 
     default:
-      return state;
+      return [];
   }
 };

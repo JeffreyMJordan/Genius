@@ -38,8 +38,10 @@ class SessionForm extends React.Component{
     let altButtonText = this.props.formType==="login"? "Sign Up" : "Sign In";
     return (
       <div className="song-form">
-        {/* <div className="modal-screen"></div> */}
-
+        
+        <ul className="errors">
+          {this.props.errors.map((error) => (<li>{error}</li>))}
+        </ul>
         
         <h2>{text}</h2>
         <p>{toggleText} <Link className="yellow-anchor-tag" to={linkText} >{altButtonText}</Link></p>
