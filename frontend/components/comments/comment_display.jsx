@@ -37,7 +37,7 @@ class CommentDisplay extends React.Component{
             {annotationHolder}
             <h3 className="bottom-line">Comments</h3>
             <ul>
-              {this.props.comments.map((comment) => <CommentIndexItem comment={comment} />)}
+              {this.props.comments.map((comment) => <CommentIndexItem key={comment.id} comment={comment} />)}
             </ul>
           </div>
           <br/>
