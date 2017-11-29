@@ -12,7 +12,7 @@ class ReferentForm extends React.Component{
     ref["start_idx"] = this.props.match.params.startIdx;
     ref["end_idx"] = this.props.match.params.endIdx;
     ref["song_id"] = this.props.song.id;
-    if (this.props.currentUser){
+    if (this.props.currentUser.id){
       ref["creator_id"] = this.props.currentUser.id;
       this.props.createReferent(ref)
       .then((res) => {
