@@ -30,7 +30,8 @@ class CommentForm extends React.Component{
   handleClick(e){
     e.preventDefault();
     if (this.props.loggedIn){
-      this.props.createComment(this.state);
+      this.props.createComment(this.state)
+        .then((res) => this.setState({body: ""}));
     }else{
       this.props.history.push("/login");
     }
