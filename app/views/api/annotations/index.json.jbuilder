@@ -3,4 +3,5 @@ json.array! @annotations do |annotation|
   json.referent_id  annotation.referent_id
   json.author_id  annotation.author_id 
   json.body  annotation.body
+  json.username annotation.author.username
 end 

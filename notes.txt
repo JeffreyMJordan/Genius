@@ -66,3 +66,8 @@ Hope says I need a lot of tinkerng with styling
 
 Do comments first 
 Hope says to try and get it on the side 
+
+In the jbuilder, user the association to get the username
+
+put a value column in voting table 
+Create a method in my model, then call it in the jbuilder 

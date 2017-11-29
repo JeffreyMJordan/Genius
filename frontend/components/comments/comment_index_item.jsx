@@ -17,7 +17,11 @@ class CommentIndexItem extends React.Component {
     }
     return (
       <li className="annotation-index-item">
-        <a>{this.props.comment.body}</a> {deleteButton}
+        <p className="username">{this.props.comment.username}</p>
+        <br/>
+        <a>{this.props.comment.body}</a> 
+        <br/>
+        {deleteButton}
       </li>
     );
   }

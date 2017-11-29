@@ -21,6 +21,7 @@
   list-style: square;
   display: flex; 
   justify-content: space-between;
+  flex-direction: column;
 }
 
 .annotation-index-item a:hover{
@@ -36,4 +37,5 @@
   cursor: pointer;
   padding: 5px;
   height: 15px;
+  width: 47px;
 }

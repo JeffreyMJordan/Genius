@@ -25,7 +25,11 @@ class AnnotationIndexItem extends React.Component{
 
     return (
       <li className="annotation-index-item">
-        <a onClick={this.showComments}>{this.props.annotation.body}</a> {deleteButton}
+        <p className="username">{this.props.annotation.username}</p>
+        <br/>
+        <a onClick={this.showComments}>{this.props.annotation.body}</a> 
+        <br/>
+        {deleteButton}
       </li>
     );
   }
