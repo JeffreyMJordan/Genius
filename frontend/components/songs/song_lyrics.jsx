@@ -11,12 +11,8 @@ class SongLyrics extends React.Component{
     this.createLyrics = this.createLyrics.bind(this);
     this.createIdxRefs = this.createIdxRefs.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    this.deleteReferent = this.deleteReferent.bind(this);
   } 
 
-  deleteReferent(id){
-    this.props.deleteReferent(id);
-  }
 
 
   //Create a hash of start_indices mapped to referents

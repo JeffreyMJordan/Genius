@@ -14,8 +14,7 @@ class AnnotationDisplay extends React.Component{
   componentWillReceiveProps(newProps){
     if(newProps.annotations===undefined){
       this.props.fetchAnnotationsByReferent(newProps.refId);
-    }
-    if(newProps.annotations.length===0){
+    }else if(newProps.annotations.length===0){
       this.props.deleteReferent(this.props.refId)
         .then((res) => this.props.history.push(`/songs/${this.props.songId}`));
     }
