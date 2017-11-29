@@ -12,7 +12,7 @@ export default (state={}, action) => {
       newState2[action.ref.song_id].push(action.ref);
       return newState2;
     case REMOVE_REFERENT:
-      debugger;
+
       let removeState = merge({}, state);
       removeState[action.ref.song_id] = [];
       return removeState;

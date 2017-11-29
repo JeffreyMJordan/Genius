@@ -16,7 +16,6 @@ const findAnnotation = (state, ownProps) => {
 };
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
   let annotation = findAnnotation(state, ownProps);
   return {
     annotation_id: ownProps.match.params.annId,

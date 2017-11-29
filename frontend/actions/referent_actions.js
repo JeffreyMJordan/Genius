@@ -11,7 +11,7 @@ export const receiveReferent = (ref) => {
 };
 
 export const removeReferent = (ref) => {
-  debugger;
+  
   return {
     type: REMOVE_REFERENT,
     ref

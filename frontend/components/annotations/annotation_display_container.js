@@ -1,6 +1,7 @@
 import AnnotationDisplay from './annotation_display';
 import {connect} from "react-redux";
 import {fetchAnnotation, fetchAnnotationsByReferent, deleteAnnotation} from "../../actions/annotation_actions";
+import {deleteReferent} from '../../actions/referent_actions';
 import {withRouter} from "react-router-dom";
 
 const findReferent = (refs, refId) => {
@@ -42,7 +43,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchAnnotation: (id) => dispatch(fetchAnnotation(id)),
     fetchAnnotationsByReferent: (refId) => dispatch(fetchAnnotationsByReferent(refId)),
-    deleteAnnotation: (id) => dispatch(deleteAnnotation(id))
+    deleteAnnotation: (id) => dispatch(deleteAnnotation(id)),
+    deleteReferent: (id) => dispatch(deleteReferent(id))
   };
 };
 
