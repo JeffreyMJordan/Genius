@@ -1,5 +1,6 @@
 import React from "react";
 import CommentIndexItem from './comment_index_item';
+import CommentForm from './comment_form';
 
 class CommentDisplay extends React.Component{
   constructor(props){
@@ -20,6 +21,8 @@ class CommentDisplay extends React.Component{
     }
   }
 
+
+
   render(){
     let annotationHolder = (<h3 className="fixed-fragment">Annotation: </h3>);
     if (this.props.annotation){
@@ -37,8 +40,13 @@ class CommentDisplay extends React.Component{
               {this.props.comments.map((comment) => <CommentIndexItem comment={comment} />)}
             </ul>
           </div>
-          <a href="" className="new-annotation-button">Create New Comment</a>
-          <a className="back-button" onClick={() => this.props.history.push(`/songs/${this.props.songId}/${this.props.refId}`)}>&#8592;</a>
+          <br/>
+          <CommentForm
+          createComment={this.props.createComment}
+          loggedIn={this.props.loggedIn}
+          currentUser={this.props.currentUser}
+          />
+          
         </div>
       );
     }else{
@@ -51,8 +59,9 @@ class CommentDisplay extends React.Component{
               
             </ul>
           </div>
-          <a href="" className="new-annotation-button">Create New Comment</a>
-          <a className="back-button" onClick={() => this.props.history.push(`/songs/${this.props.songId}/${this.props.refId}`)}>&#8592;</a>
+          <CommentForm />
+          <br/>
+          
         </div>
       );
     }

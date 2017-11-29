@@ -26,7 +26,9 @@ const mapStateToProps = (state, ownProps) => {
     comments: state.comments[ownProps.match.params.annId],
     annotation: annotation,
     songId: ownProps.match.params.songId,
-    refId: ownProps.match.params.refId
+    refId: ownProps.match.params.refId,
+    loggedIn: Boolean(state.session.currentUser.id),
+    currentUser: state.session.currentUser
   };
 }; 
 
