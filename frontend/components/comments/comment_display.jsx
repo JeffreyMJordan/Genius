@@ -13,17 +13,25 @@ class CommentDisplay extends React.Component{
 
   componentWillReceiveProps(newProps){
     if(newProps.comments===undefined){
-      this.props.fetchCommentsByAnnotation(newProps.annotation_Id);
+      this.props.fetchCommentsByAnnotation(newProps.annotation_id);
+    }else if(newProps.annotation===undefined){
+      console.log(this.props.annotation_id);
+      this.props.fetchAnnotation(parseInt(this.props.annotation_id));
     }
   }
 
   render(){
+    let annotationHolder = (<h3 className="fixed-fragment">Annotation: </h3>);
+    if (this.props.annotation){
+      annotationHolder = <h3 className="fixed-fragment">Annotation: {this.props.annotation.body}</h3>;
+    }
+
     console.log(this.props);
     if(this.props.comments && this.props.annotation){
       return(
         <div className="fixed">
           <div className="fixed-content">
-            <h3 className="fixed-fragment">Annotation: {this.props.annotation.body}</h3>
+            {annotationHolder}
             <h3 className="bottom-line">Comments</h3>
             <ul>
               {this.props.comments.map((comment) => <CommentIndexItem comment={comment} />)}
@@ -37,7 +45,7 @@ class CommentDisplay extends React.Component{
       return(
         <div className="fixed">
           <div className="fixed-content">
-            <h3 className="fixed-fragment">Annotation: {this.props.annotation.body}</h3>
+            {annotationHolder}
             <h3 className="bottom-line">Comments</h3>
             <ul>
               
