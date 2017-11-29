@@ -14,7 +14,7 @@ export default (state={}, action) => {
     case REMOVE_REFERENT:
 
       let removeState = merge({}, state);
-      removeState[action.ref.song_id] = [];
+      removeState[action.ref.song_id] = removeState[action.ref.song_id].filter((ref) => ref.id!=action.ref.id);
       return removeState;
     case RECEIVE_PAYLOAD:
       let newState = merge({}, state);
