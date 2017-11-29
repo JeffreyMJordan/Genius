@@ -1,6 +1,6 @@
 .lyrics{
   position: relative;
-  width: 400px;
+  width: 450px;
   font-size: 20px;
   color: black;
   white-space: pre-wrap;
@@ -32,7 +32,7 @@
   font-size: 20px;
   z-index: 3;
   position: absolute;
-  width: 400px;
+  width: 450px;
   line-height: 200%;
   padding: 10px;
 }

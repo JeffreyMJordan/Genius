@@ -4,15 +4,23 @@
   display: flex;
   flex-direction: column;
   z-index: 10;
-  flex: 5;
+  flex: 2;
   margin-top: 60px;
   padding-left: 10px;
 }
 
 .fixed-content{
   padding-right: 10px;
+  width: 110%;
+}
+
+.fixed-content ul{
   list-style: square;
-  width: 90%
+}
+
+.fixed-content ul li{
+  padding-top: 15px;
+  border-bottom: 1px solid black;
 }
 
 .fixed-fragment{
