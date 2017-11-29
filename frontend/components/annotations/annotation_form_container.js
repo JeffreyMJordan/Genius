@@ -17,6 +17,7 @@ const findReferent = (refs, refId) => {
 };
 
 const mapStateToProps = (state, ownProps) => {
+  debugger;
   let refId = ownProps.match.params.refId;
   let songId = ownProps.match.params.songId;
   let song = state.songs[songId];

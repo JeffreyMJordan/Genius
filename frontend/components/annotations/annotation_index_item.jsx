@@ -17,7 +17,7 @@ class AnnotationIndexItem extends React.Component{
   }
 
   showComments(){
-    this.props.history.push(`/songs/${this.props.songId}/comments/${this.props.annotation.id}`);
+    this.props.history.push(`/songs/${this.props.songId}/${this.props.annotation.referent_id}/${this.props.annotation.id}`);
   }
 
   render(){

@@ -49,7 +49,7 @@ class SongDisplay extends React.Component{
                 </div>
                 <Route path="/songs/:songId/create/:startIdx/:endIdx" component={ReferentFormContainer}/>
                 <Route exact path="/songs/:songId/:refId" component={AnnotationDisplayContainer}/>
-                {/* <Route exact path="/songs/:songId/comments/:annId" component={CommentsDisplayContainer}/> */}
+                <Route exact path="/songs/:songId/:refId/:annId" component={CommentDisplayContainer}/>
                 <LoggedInRoute exact path="/songs/:songId/:refId/createannotation" component={AnnotationFormContainer}/>
               </div>
           </div>
@@ -68,7 +68,7 @@ class SongDisplay extends React.Component{
                 </div>
                 <Route path="/songs/:songId/create/:startIdx/:endIdx" component={ReferentFormContainer}/>
                 <Route exact path="/songs/:songId/:refId" component={AnnotationDisplayContainer}/>
-                {/* <Route exact path="/songs/:songId/comments/:annId" component={CommentsDisplayContainer}/> */}
+                <Route exact path="/songs/:songId/:refId/:annId" component={CommentDisplayContainer}/>
                 <LoggedInRoute exact path="/songs/:songId/:refId/createannotation" component={AnnotationFormContainer}/>
                 
               </div>
