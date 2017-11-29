@@ -30,7 +30,6 @@ class AnnotationDisplay extends React.Component{
             <h3 className="fixed-fragment">{this.props.fragment}</h3>
             <h3 className="bottom-line">Annotations (click to see comments)</h3>
             <ul>
-
               {this.props.annotations.map((ann) => <AnnotationIndexItem key={ann.id} 
               annotation={ann} 
               currentUser={this.props.currentUser} 

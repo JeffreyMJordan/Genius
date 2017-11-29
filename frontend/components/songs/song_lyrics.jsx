@@ -23,6 +23,8 @@ class SongLyrics extends React.Component{
     let endIdx = window.getSelection().getRangeAt(0).endOffset;
     if(startIdx!=endIdx){
       this.props.history.push(`/songs/${this.props.match.params.songId}/create/${startIdx}/${endIdx}`);
+    }else{
+      this.props.history.push(`/songs/${this.props.match.params.songId}`);
     }
   }
 
@@ -67,7 +69,7 @@ class SongLyrics extends React.Component{
 
   render(){
     return (
-    <div onMouseUp={this.handleHighlight} >
+    <div onMouseUp={this.handleHighlight}>
       <div
         className="ghost">{this.props.song.lyrics}
       </div>
