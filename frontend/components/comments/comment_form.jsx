@@ -29,10 +29,11 @@ class CommentForm extends React.Component{
   }
 
   handleClick(e){
+    e.preventDefault();
     if (this.props.loggedIn){
       this.props.createComment(this.state);
     }else{
-      <Redirect to='/login' />;
+      this.props.history.push("/login");
     }
   }
 
