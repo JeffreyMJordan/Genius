@@ -35,14 +35,12 @@ class AnnotationForm extends React.Component{
       <h2>New annotation</h2>
       <form action="" onSubmit={this.handleSubmit}>
         <textarea type="text" 
-        placeholder="Annotation" 
         value={this.state.body}
         onChange={this.handleChange('body')}/>
-
-        <a><input type="submit" className="new-annotation-button" value="Create Annotation"/></a>
       </form>
       <br/>
       </div>
+      <a type="submit" onClick={this.handleSubmit} className="new-annotation-button">Create Annotation</a>
     </div>);
   }
 
