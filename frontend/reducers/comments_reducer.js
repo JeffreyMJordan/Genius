@@ -24,7 +24,7 @@ export default (state={}, action) => {
       return receiveCommentsState;
     case REMOVE_COMMENT:
       let removeState = merge({}, state);
-      removeState[action.comment.annotation_id] = [];
+      removeState[action.comment.annotation_id] = removeState[action.comment.annotation_id].filter((c) => c.id!=action.comment.id);
       return removeState;
     default: 
       return state;
