@@ -69,7 +69,7 @@ class SongLyrics extends React.Component{
 
   render(){
     return (
-    <div onMouseUp={this.handleHighlight}>
+    <div onMouseUp={this.handleHighlight} className="lyrics-content-container">
       <div
         className="ghost">{this.props.song.lyrics}
       </div>
