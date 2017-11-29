@@ -10,8 +10,7 @@ class AnnotationIndexItem extends React.Component{
 
 
   handleClick(){
-    this.props.deleteAnnotation(this.props.annotation.id)
-      .then((res) => console.log(res));
+    this.props.deleteAnnotation(this.props.annotation.id);
   }
 
   showComments(){

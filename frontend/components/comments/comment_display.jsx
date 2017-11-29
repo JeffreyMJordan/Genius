@@ -16,7 +16,6 @@ class CommentDisplay extends React.Component{
     if(newProps.comments===undefined){
       this.props.fetchCommentsByAnnotation(newProps.annotation_id);
     }else if(newProps.annotation===undefined){
-      console.log(this.props.annotation_id);
       this.props.fetchAnnotation(parseInt(this.props.annotation_id));
     }
   }
@@ -37,7 +36,11 @@ class CommentDisplay extends React.Component{
             {annotationHolder}
             <h3 className="bottom-line">Comments</h3>
             <ul>
-              {this.props.comments.map((comment) => <CommentIndexItem key={comment.id} comment={comment} />)}
+              {this.props.comments.map((comment) => <CommentIndexItem 
+              key={comment.id} 
+              comment={comment} 
+              currentUser={this.props.currentUser}
+              deleteComment={this.props.deleteComment}/>)}
             </ul>
           </div>
           <br/>
