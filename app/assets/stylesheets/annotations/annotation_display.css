@@ -12,11 +12,23 @@
   cursor: pointer;
 }
 
+.new-annotation-button:hover{
+  background: #99a7ee;
+}
+
 .annotation-index-item{
   padding-bottom: 5px;
   list-style: square;
   display: flex; 
   justify-content: space-between;
+}
+
+.annotation-index-item a:hover{
+  background: #99a7ee;
+}
+
+.annotation-delete:hover{
+  background: #99a7ee;
 }
 
 .annotation-delete{

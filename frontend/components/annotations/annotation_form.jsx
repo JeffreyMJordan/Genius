@@ -41,6 +41,7 @@ class AnnotationForm extends React.Component{
       <br/>
       </div>
       <a type="submit" onClick={this.handleSubmit} className="new-annotation-button">Create Annotation</a>
+      <a className="back-button" onClick={() => this.props.history.push(`/songs/${this.props.songId}/${this.props.refId}`)}>&#8592;</a>
     </div>);
   }
 

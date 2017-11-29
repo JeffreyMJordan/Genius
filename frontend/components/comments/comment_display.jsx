@@ -23,17 +23,28 @@ class CommentDisplay extends React.Component{
       return(
         <div className="fixed">
           <div className="fixed-content">
-            <h3 className="fixed-fragment">{this.props.annotation.body}</h3>
+            <h3 className="fixed-fragment">Annotation: {this.props.annotation.body}</h3>
+            <h3 className="bottom-line">Comments</h3>
             <ul>
               {this.props.comments.map((comment) => <CommentIndexItem comment={comment} />)}
             </ul>
           </div>
+          <a href="" className="new-annotation-button">Create New Comment</a>
+          <a className="back-button" onClick={() => this.props.history.push(`/songs/${this.props.songId}/${this.props.refId}`)}>&#8592;</a>
         </div>
       );
     }else{
       return(
-        <div>
-
+        <div className="fixed">
+          <div className="fixed-content">
+            <h3 className="fixed-fragment">Annotation: {this.props.annotation.body}</h3>
+            <h3 className="bottom-line">Comments</h3>
+            <ul>
+              
+            </ul>
+          </div>
+          <a href="" className="new-annotation-button">Create New Comment</a>
+          <a className="back-button" onClick={() => this.props.history.push(`/songs/${this.props.songId}/${this.props.refId}`)}>&#8592;</a>
         </div>
       );
     }

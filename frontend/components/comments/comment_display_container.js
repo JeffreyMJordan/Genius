@@ -20,7 +20,9 @@ const mapStateToProps = (state, ownProps) => {
   return {
     annotation_id: ownProps.match.params.annId,
     comments: state.comments[ownProps.match.params.annId],
-    annotation: annotation
+    annotation: annotation,
+    songId: ownProps.match.params.songId,
+    refId: ownProps.match.params.refId
   };
 }; 
 
