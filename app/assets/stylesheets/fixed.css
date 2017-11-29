@@ -37,6 +37,7 @@
 
 .fixed-fragment{
   border: 3px solid #99a7ee;
+  padding: 5px;
 }
 
 .fixed textarea{
