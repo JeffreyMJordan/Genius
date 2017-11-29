@@ -11,13 +11,11 @@ class AnnotationIndexItem extends React.Component{
 
   handleClick(){
     this.props.deleteAnnotation(this.props.annotation.id)
-      .then((res) => {
-        this.props.history.push(`/songs/${this.props.songId}`);
-        window.location.reload();});
+      .then((res) => console.log(res));
   }
 
   showComments(){
-    this.props.history.push(`/songs/${this.props.songId}/${this.props.annotation.referent_id}/${this.props.annotation.id}`);
+    this.props.history.push(`/songs/${this.props.songId}/${this.props.annotation.referent_id}/comments/${this.props.annotation.id}`);
   }
 
   render(){

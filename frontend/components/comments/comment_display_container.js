@@ -8,7 +8,6 @@ const findAnnotation = (state, ownProps) => {
   let songId = ownProps.match.params.songId;
   let refId = ownProps.match.params.refId;
   for(var i = 0; i<state.annotations[refId].length; i++){
-    debugger;
     if (state.annotations[refId][i].id === parseInt(ownProps.match.params.annId)){
       return state.annotations[refId][i];
     }
@@ -17,8 +16,8 @@ const findAnnotation = (state, ownProps) => {
 };
 
 const mapStateToProps = (state, ownProps) => {
-  let annotation = findAnnotation(state, ownProps);
   debugger;
+  let annotation = findAnnotation(state, ownProps);
   return {
     annotation_id: ownProps.match.params.annId,
     comments: state.comments[ownProps.match.params.annId],
