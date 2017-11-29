@@ -24,7 +24,7 @@ export default (state={}, action) => {
       return newState2;
     case REMOVE_ANNOTATION:
       let removeState = merge({}, state);
-      removeState[action.annotation.referent_id] = [];
+      removeState[action.annotation.referent_id] = state[action.annotation.referent_id].filter((ann) => ann.id!=action.annotation.id);
       return removeState;
     default: 
       return state;
