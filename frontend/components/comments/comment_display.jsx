@@ -20,6 +20,14 @@ class CommentDisplay extends React.Component{
     }
   }
 
+  getOffset(){
+    let min = -10;
+    if (window.pageYOffset - 400 > min){
+      return window.pageYOffset - 400;
+    }else{
+      return min;
+    }
+  }
 
 
   render(){
@@ -31,7 +39,7 @@ class CommentDisplay extends React.Component{
     console.log(this.props);
     if(this.props.comments && this.props.annotation){
       return(
-        <div className="fixed">
+        <div className="fixed" style={{top: this.getOffset()}}>
           <div className="fixed-content">
             {annotationHolder}
             <h3 className="bottom-line">Comments</h3>

@@ -21,13 +21,20 @@ class ReferentForm extends React.Component{
     }else{
       this.props.history.push(`/login`);
     }
-    
+  }
 
+  getOffset(){
+    let min = -10;
+    if (window.pageYOffset - 400 > min){
+      return window.pageYOffset - 400;
+    }else{
+      return min;
+    }
   }
 
   render(){
     return (
-      <div className="fixed">
+      <div className="fixed" style={{top: this.getOffset()}}>
         <div className="fixed-content">
           <h3 className="fixed-fragment">{this.props.fragment}</h3>
           <a className="new-annotation-button" onClick={this.handleClick}>Start Annotation</a>
