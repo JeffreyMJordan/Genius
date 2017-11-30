@@ -6,6 +6,8 @@ class AnnotationIndexItem extends React.Component{
     super(props);
     this.handleClick = this.handleClick.bind(this);
     this.showComments = this.showComments.bind(this);
+    this.createUpvote = this.createUpvote.bind(this);
+    this.createDownvote = this.createDownvote.bind(this);
   }
 
 
@@ -36,6 +38,26 @@ class AnnotationIndexItem extends React.Component{
     };
   }
 
+  createUpvote(){
+    if(this.props.currentUser.votes[this.props.annotation.id] === "up"){
+      return (<p className="upvote" style={{color: `#FF8B60`}}>&#8679;</p>);
+    }else{
+      return (<p className="upvote" onClick={this.handleVote("up")} >&#8679;</p>);
+    }
+    
+  }
+
+
+
+  createDownvote(){
+    if(this.props.currentUser.votes[this.props.annotation.id] === "down"){
+      return (<p className="downvote" style={{color: `#9494FF`}} >&#8681;</p>);
+    }else{
+      return (<p className="downvote" onClick={this.handleVote("down")}>&#8681;</p>);
+    }
+    
+  }
+
   render(){
     
     let deleteButton = undefined;
@@ -55,16 +77,16 @@ class AnnotationIndexItem extends React.Component{
       <li className="annotation-index-item">
         <p className="username">{username}</p>
         
-        <a className="annotation-content"><a className="annotation-body" onClick={this.showComments}>{body}</a>
-        <p className="votes-container"> 
+        <div className="annotation-content"><a className="annotation-body" onClick={this.showComments}>{body}</a>
+        <div className="votes-container"> 
            {/* Upvote button */}
-          <p className="upvote" onClick={this.handleVote("up")} >&#8679;</p>
+          {this.createUpvote()}
           <p className="total-container">{total}</p>
 
           {/* Downvote button */}
-          <p className="downvote" onClick={this.handleVote("down")}>&#8681;</p>
-          </p>
-        </a>
+          {this.createDownvote()}
+          </div>
+        </div>
         
         {deleteButton}
       </li>

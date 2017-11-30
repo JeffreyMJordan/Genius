@@ -71,3 +71,8 @@ In the jbuilder, user the association to get the username
 
 put a value column in voting table 
 Create a method in my model, then call it in the jbuilder 
+
+
+So when I'm sending the user, send which stuff they've voted 
+Have it in a hash
+Check that hash on the frontend
