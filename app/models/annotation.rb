@@ -10,5 +10,10 @@ class Annotation < ApplicationRecord
 
   has_many :comments
 
-  has_many :votes
+  has_many :votes,
+    primary_key: :id,
+    foreign_key: :annotation_id,
+    class_name: 'Vote'
+
+
 end
