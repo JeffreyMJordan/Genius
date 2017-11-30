@@ -31,7 +31,6 @@ class AnnotationDisplay extends React.Component{
   }
 
   render(){
-    console.log(window.pageYOffset);
     if(this.props.annotations){
       
       return (
@@ -44,7 +43,8 @@ class AnnotationDisplay extends React.Component{
               annotation={ann} 
               currentUser={this.props.currentUser} 
               deleteAnnotation={this.props.deleteAnnotation}
-              songId={this.props.songId}/>)}
+              songId={this.props.songId}
+              votes={this.props.votes[ann.id]}/>)}
             </ul>
             <br/>
             <Link className="new-annotation-button" to={`/songs/${this.props.songId}/${this.props.refId}/createannotation`}>Create new annotation</Link>
