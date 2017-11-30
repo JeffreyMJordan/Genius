@@ -11,7 +11,11 @@ export default (state=_nullUser, action) => {
   Object.freeze(state);
   switch(action.type){
     case RECEIVE_CURRENT_USER:
-      return merge({}, {currentUser: action.currentUser});
+      let newState = merge({}, {currentUser: action.currentUser});
+      if (newState["currentUser"]["votes"]===undefined){
+        newState["currentUser"]["votes"] = {};
+      }
+      return newState;
 
     case RECEIVE_VOTE:
       let voteState = merge({}, state);
