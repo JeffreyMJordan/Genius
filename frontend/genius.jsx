@@ -11,6 +11,8 @@ import {fetchPayloads, fetchPayloadBySongID} from './actions/payload_actions';
 import {createReferent, fetchReferent, deleteReferent} from './actions/referent_actions';
 import {createAnnotation, fetchAnnotation, fetchAnnotationsByReferent, deleteAnnotation} from './actions/annotation_actions';
 import {createComment, fetchComment, fetchCommentsByAnnotation, deleteComment} from './actions/comment_actions';
+import {createVote, fetchVotesByAnnotation} from './actions/vote_actions'; 
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -22,11 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }else{
     store = configureStore();
   }
+
+  window.createVote = createVote;
+  window.fetchVotesByAnnotation = fetchVotesByAnnotation;
   
-  window.createComment = createComment;
-  window.fetchComment = fetchComment;
-  window.fetchCommentsByAnnotation = fetchCommentsByAnnotation;
-  window.deleteComment = deleteComment;
+  
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   
