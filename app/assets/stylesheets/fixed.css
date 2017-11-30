@@ -9,6 +9,8 @@
   padding-left: 10px;
   position: relative;
   height: 1000px;
+  max-width: 500px;
+  min-width: 450px;
 }
 
 .internal-fixed{
