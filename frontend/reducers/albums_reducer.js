@@ -19,6 +19,9 @@ export default (state={}, action) => {
     case RECEIVE_PAYLOADS:
       let albums = merge({}, state);
       action.payloads.forEach((payload) => {
+        if(payload.album.image_url===""){
+          payload.album.image_url = "http://www.baronblaze.com/wp-content/uploads/2015/12/music-placeholder.png";
+        }
         albums[payload.album.id] = payload.album;
       });
       return merge({}, albums);
@@ -26,6 +29,9 @@ export default (state={}, action) => {
     case RECEIVE_PAYLOAD:
       let newState2 = merge({}, state);
       let payload = action.payload;
+      if(payload.album.image_url===""){
+        payload.album.image_url = "http://www.baronblaze.com/wp-content/uploads/2015/12/music-placeholder.png";
+      }
       newState2[payload.album.id] = payload.album;
       return newState2;
       
