@@ -76,3 +76,7 @@ Create a method in my model, then call it in the jbuilder
 So when I'm sending the user, send which stuff they've voted 
 Have it in a hash
 Check that hash on the frontend
+
+
+There's a bug in the voting system...
+I only increment stuff by plus or minus one, meaning that user's can't undo their own upvotes/downvotes

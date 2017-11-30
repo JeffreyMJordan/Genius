@@ -4,6 +4,7 @@ export const RECEIVE_SONGS = "RECEIVE_SONGS";
 export const RECEIVE_SONG = "RECEIVE_SONG";
 export const REMOVE_SONG = "REMOVE_SONG";
 export const RECEIVE_SONG_ERRORS = "RECEIVE_SONG_ERRORS";
+export const REMOVE_SONG_ERRORS = "REMOVE_SONG_ERRORS";
 
 
 export const receiveSong = (song) => {
@@ -31,6 +32,12 @@ export const receiveSongErrors = (errors) => {
   return {
     type: RECEIVE_SONG_ERRORS,
     errors
+  };
+};
+
+export const removeSongErrors = () => {
+  return {
+    type: REMOVE_SONG_ERRORS
   };
 };
 

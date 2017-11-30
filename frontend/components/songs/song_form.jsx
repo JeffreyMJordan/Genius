@@ -29,11 +29,17 @@ class SongForm extends React.Component{
     };
   }
 
+  componentWillMount(){
+    this.props.removeErrors();
+  }
+
   render(){
     return (
       <div className="song-form">
         <h2>Add a Song</h2>
-
+        <ul className="errors">
+          {this.props.errors.map((error) => (<li key={error} >{error}</li>))}
+        </ul>
         <form action="" onSubmit={this.handleSubmit} >
           
           <h3>Title</h3>
