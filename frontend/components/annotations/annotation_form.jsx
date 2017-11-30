@@ -5,7 +5,7 @@ class AnnotationForm extends React.Component{
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    console.log(this.props.currentUser);
+    
     this.state = {
       referent_id: this.props.refId,
       author_id: this.props.currentUser.id,

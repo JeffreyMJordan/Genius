@@ -5,7 +5,7 @@ import CommentForm from './comment_form';
 class CommentDisplay extends React.Component{
   constructor(props){
     super(props);
-    console.log(this.props);
+    
   }
 
   componentDidMount(){
@@ -36,7 +36,7 @@ class CommentDisplay extends React.Component{
       annotationHolder = <h3 className="fixed-fragment">Annotation: {this.props.annotation.body}</h3>;
     }
 
-    console.log(this.props);
+  
     if(this.props.comments && this.props.annotation){
       return(
         <div className="fixed" style={{top: this.getOffset()}}>

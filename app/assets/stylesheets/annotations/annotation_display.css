@@ -17,16 +17,13 @@
 }
 
 .annotation-index-item{
-  padding-bottom: 5px;
   list-style: square;
   display: flex; 
   justify-content: space-between;
   flex-direction: column;
 }
 
-.annotation-index-item a:hover{
-  background: #99a7ee;
-}
+
 
 .annotation-delete:hover{
   background: #99a7ee;
@@ -38,4 +35,16 @@
   padding: 5px;
   height: 15px;
   width: 47px;
+  margin-bottom: 10px; 
+}
+
+.annotation-content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: default;
+}
+
+.annotation-body:hover{
+  background: #99a7ee;
 }

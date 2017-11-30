@@ -21,10 +21,26 @@ class AnnotationIndexItem extends React.Component{
     this.props.fetchVotesByAnnotation(this.props.annotation.id);
   }
 
+  handleVote(type){
+    return (e) => {
+      e.preventDefault();
+      console.log({
+        user_id: this.props.currentUser.id,
+        annotation_id: this.props.annotation.id,
+        vote_type: type});
+
+      this.props.createVote({
+        user_id: this.props.currentUser.id,
+        annotation_id: this.props.annotation.id,
+        vote_type: type});
+    };
+  }
+
   render(){
-    console.log(this.props);
+    
     let deleteButton = undefined;
     let username = "Unknown";
+    let total = "0";
     let body = "";
     if (this.props.annotation){
       username = this.props.annotation.username;
@@ -32,16 +48,24 @@ class AnnotationIndexItem extends React.Component{
       if(this.props.annotation.author_id === this.props.currentUser.id){
         deleteButton = (<a className="annotation-delete" onClick={this.handleClick}>Delete</a>);
       }
+      total = this.props.total;
     }
-
     
-
     return (
       <li className="annotation-index-item">
         <p className="username">{username}</p>
-        <br/>
-        <a onClick={this.showComments}>{body}</a> 
-        <br/>
+        
+        <a className="annotation-content"><a className="annotation-body" onClick={this.showComments}>{body}</a>
+        <p> 
+           {/* Upvote button */}
+          <a onClick={this.handleVote("up")} >&#8679;</a>
+          {total}
+
+          {/* Downvote button */}
+          <a onClick={this.handleVote("down")}>&#8681;</a>
+          </p>
+        </a>
+        
         {deleteButton}
       </li>
     );

@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import {fetchAnnotation, fetchAnnotationsByReferent, deleteAnnotation} from "../../actions/annotation_actions";
 import {deleteReferent} from '../../actions/referent_actions';
 import {withRouter} from "react-router-dom";
-import {fetchVotesByAnnotation, createVote} from '../../actions/vote_actions';
+
 
 const findReferent = (refs, refId) => {
   for(var i = 0; i<refs.length; i++){

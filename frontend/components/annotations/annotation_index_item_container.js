@@ -6,7 +6,7 @@ import { deleteAnnotation } from '../../actions/annotation_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(ownProps);
+  
   let votes = [];
   let total = 0; 
   if (ownProps.annotation && state.votes[ownProps.annotation.id]){
