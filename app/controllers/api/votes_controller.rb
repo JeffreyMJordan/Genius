@@ -32,6 +32,22 @@ class Api::VotesController < ApplicationController
     end 
   end 
 
+  def update
+    @vote = Vote.find_by_id(params[:id])
+    
+    if @vote.vote_type=="up"
+      @vote.vote_type = "down"
+    else
+      @vote.vote_type = "up"
+    end 
+
+    if @vote.save 
+      render :show
+    else 
+      render json: ["Invalid vote"], status: 422
+    end 
+  end 
+
   private 
   def vote_params
     params.require(:vote).permit(:user_id, :annotation_id, :vote_type)

@@ -13,3 +13,10 @@ export const fetchVotesByAnnotation = (id) => {
     data: {id: id}
   });
 };
+
+export const updateVote = (id) => {
+  return $.ajax({
+    method: "PATCH",
+    url: `api/votes/${id}`
+  });
+};

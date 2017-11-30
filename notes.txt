@@ -80,3 +80,7 @@ Check that hash on the frontend
 
 There's a bug in the voting system...
 I only increment stuff by plus or minus one, meaning that user's can't undo their own upvotes/downvotes
+Maybe I could patch the vote? 
+That messes with how my buttons are currently 
+Maybe I could change the value? 
+I think patching is the best option 
