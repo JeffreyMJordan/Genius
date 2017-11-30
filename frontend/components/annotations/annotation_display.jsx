@@ -1,5 +1,5 @@
 import React from "react";
-import AnnotationIndexItem from "./annotation_index_item";
+import AnnotationIndexItemContainer from "./annotation_index_item_container";
 import {Link} from "react-router-dom";
 
 class AnnotationDisplay extends React.Component{
@@ -39,12 +39,12 @@ class AnnotationDisplay extends React.Component{
             <h3 className="fixed-fragment">{this.props.fragment}</h3>
             <h3 className="bottom-line">Annotations (click to see comments)</h3>
             <ul>
-              {this.props.annotations.map((ann) => <AnnotationIndexItem key={ann.id} 
-              annotation={ann} 
-              currentUser={this.props.currentUser} 
-              deleteAnnotation={this.props.deleteAnnotation}
-              songId={this.props.songId}
-              votes={this.props.votes[ann.id]}/>)}
+              {/* render a container everyhwere I want to render an index item */}
+              {/* use ownProps to give it the annotation id */}
+              {this.props.annotations.map((ann) => <AnnotationIndexItemContainer
+              key={ann.id} 
+              annotation={ann}
+              songId={this.props.songId}/>)}
             </ul>
             <br/>
             <Link className="new-annotation-button" to={`/songs/${this.props.songId}/${this.props.refId}/createannotation`}>Create new annotation</Link>

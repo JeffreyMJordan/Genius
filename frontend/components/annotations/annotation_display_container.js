@@ -38,8 +38,7 @@ const mapStateToProps = (state, ownProps) => {
     annotations: state.annotations[refId],
     songId,
     fragment, 
-    currentUser,
-    votes: state.votes
+    currentUser
   };
 };
 
@@ -48,9 +47,7 @@ const mapDispatchToProps = (dispatch) => {
     fetchAnnotation: (id) => dispatch(fetchAnnotation(id)),
     fetchAnnotationsByReferent: (refId) => dispatch(fetchAnnotationsByReferent(refId)),
     deleteAnnotation: (id) => dispatch(deleteAnnotation(id)),
-    deleteReferent: (id) => dispatch(deleteReferent(id)),
-    fetchVotesByAnnotation: (id) => dispatch(fetchVotesByAnnotation(id)),
-    createVote: (vote) => dispatch(createVote(vote))
+    deleteReferent: (id) => dispatch(deleteReferent(id))
   };
 };
 

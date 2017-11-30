@@ -17,18 +17,30 @@ class AnnotationIndexItem extends React.Component{
     this.props.history.push(`/songs/${this.props.songId}/${this.props.annotation.referent_id}/comments/${this.props.annotation.id}`);
   }
 
+  componentDidMount(){
+    this.props.fetchVotesByAnnotation(this.props.annotation.id);
+  }
+
   render(){
     console.log(this.props);
     let deleteButton = undefined;
-    if(this.props.annotation.author_id === this.props.currentUser.id){
-      deleteButton = (<a className="annotation-delete" onClick={this.handleClick}>Delete</a>);
+    let username = "Unknown";
+    let body = "";
+    if (this.props.annotation){
+      username = this.props.annotation.username;
+      body = this.props.annotation.body;
+      if(this.props.annotation.author_id === this.props.currentUser.id){
+        deleteButton = (<a className="annotation-delete" onClick={this.handleClick}>Delete</a>);
+      }
     }
+
+    
 
     return (
       <li className="annotation-index-item">
-        <p className="username">{this.props.annotation.username}</p>
+        <p className="username">{username}</p>
         <br/>
-        <a onClick={this.showComments}>{this.props.annotation.body}</a> 
+        <a onClick={this.showComments}>{body}</a> 
         <br/>
         {deleteButton}
       </li>
