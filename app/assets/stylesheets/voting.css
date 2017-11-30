@@ -1,0 +1,32 @@
+.upvote:hover{
+  color: #FF8B60;
+}
+
+.upvote{
+  cursor: pointer;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.downvote:hover{
+  color: #9494FF;
+}
+
+.downvote{
+  cursor: pointer;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.total-container{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.votes-container{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}

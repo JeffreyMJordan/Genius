@@ -43,8 +43,14 @@
   flex-direction: row;
   justify-content: space-between;
   cursor: default;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .annotation-body:hover{
   background: #99a7ee;
+}
+
+.annotation-body{
+  height: 100%;
 }

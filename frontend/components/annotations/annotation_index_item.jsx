@@ -56,13 +56,13 @@ class AnnotationIndexItem extends React.Component{
         <p className="username">{username}</p>
         
         <a className="annotation-content"><a className="annotation-body" onClick={this.showComments}>{body}</a>
-        <p> 
+        <p className="votes-container"> 
            {/* Upvote button */}
-          <a onClick={this.handleVote("up")} >&#8679;</a>
-          {total}
+          <p className="upvote" onClick={this.handleVote("up")} >&#8679;</p>
+          <p className="total-container">{total}</p>
 
           {/* Downvote button */}
-          <a onClick={this.handleVote("down")}>&#8681;</a>
+          <p className="downvote" onClick={this.handleVote("down")}>&#8681;</p>
           </p>
         </a>
         
