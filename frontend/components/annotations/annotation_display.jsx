@@ -19,8 +19,7 @@ class AnnotationDisplay extends React.Component{
       if(newProps.fragment){
         this.props.deleteReferent(this.props.refId)
         .then((res) => this.props.history.push(`/songs/${this.props.songId}`));
-      }
-      
+      }     
     }
   }
 
