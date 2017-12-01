@@ -14,4 +14,5 @@ const configureStore = (preloadedState = {}) => (
   createStore(rootReducer, preloadedState, applyMiddleware(...middlewares))
 );
 
+//comment so it lets me commit again
 export default configureStore;
