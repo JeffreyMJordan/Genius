@@ -25,14 +25,7 @@ export default (state=_nullUser, action) => {
       let updateState = merge({}, state);
       updateState["currentUser"]["votes"][action.vote.annotation_id] = action.vote;
       return updateState;
-    // case RECEIVE_VOTES:
-    //   let votesState = merge({}, state);
-    //   // debugger;
-    //   if (action.votesPayload){
-    //     console.log("here");
-    //     votesState["currentUser"]["votes"][action.votes[0].annotation_id] = action.votesPayload.votes;
-    //   }
-    //   return votesState;
+
     case REMOVE_VOTE:
       let removeState = merge({}, state);
       removeState["currentUser"]["votes"][action.vote.annotation_id] = undefined;
