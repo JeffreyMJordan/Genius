@@ -49,16 +49,17 @@ class SongLyrics extends React.Component{
   }
 
 
-  //Just use a map, have it use an anchor tag, react will just interpolate the array 
+
   createLyrics(){
-    let {startIdxRefs, endIdxRefs} = this.createIdxRefs();
-    let str = "";
+    let {startIdxRefs} = this.createIdxRefs();
     let arr = [];
     for(var i = 0; i<this.props.song.lyrics.length; i++){
       let letter = this.props.song.lyrics[i];
       if(startIdxRefs[i]){
         let ref = startIdxRefs[i];
-        arr.push(<a key={ref.start_idx} onClick={this.handleClick(ref.id)}>{this.props.song.lyrics.slice(ref.start_idx, ref.end_idx)}</a>);
+        arr.push(<a key={ref.start_idx} onClick={this.handleClick(ref.id)}>
+        {this.props.song.lyrics.slice(ref.start_idx, ref.end_idx)}
+        </a>);
         i = ref.end_idx-1;
       }else{
         arr.push(letter);
@@ -74,7 +75,6 @@ class SongLyrics extends React.Component{
         className="ghost">{this.props.song.lyrics}
       </div>
       <div className="lyrics">{this.createLyrics()}</div>
-      {/* <Route path="/songs/:songId/:refId" component={AnnotationDisplay}/> */}
     </div>);
   }
 }
