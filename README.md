@@ -11,7 +11,9 @@ Prodigy is a single page web application that hosts annotatable song lyrics. Use
 **Users can add annotations by highlighting song lyrics**
 ![alt text](https://media.giphy.com/media/l2RnHqBvcUwXLTv6U/giphy.gif) 
 
-To create an annotation, Prodigy uses an object called a referent. On the frontend, referents are represented by anchor tags wrapped around specific lyrics according to their start and end index.
+Annotations represented the most significant challenge I faced when developing Prodigy. I came up with Prodigy's annotation system by analyzing Genius' API and inspecting how the HTML on Genius' lyrics page changed in response to new annotations. I noticed that when a new annotation was created, Genius wrapped the corresponding lyric in an anchor tag, which allowed them to add click handling to attach multiple annotations to said lyric. 
+
+To create an annotation, Prodigy uses an object called a referent. On the frontend, referents are represented by anchor tags wrapped around specific lyrics according to their start and end indices. Lyrics are built up on the frontend by iterating through a song's stored lyrics, then adding anchor tags at the referent's corresponding start and end indices. These lyrics are added to an array, which is interpolated by React in Prodigy's LyricsDisplay component. 
 
 ```javascript
 createLyrics(){
@@ -69,6 +71,8 @@ On the backend, Prodigy checks to see if the submitted album and artist name are
     end 
   end
 ```
+
+
 
 ### Comments and Voting 
 
