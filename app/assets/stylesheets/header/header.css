@@ -47,8 +47,19 @@
 }
 
 
-.logo{
+.logo a{
   position: center;
+  color: white;
+  box-shadow: 10px 5px 5px black;
+}
+
+.logo a h1{
+  text-shadow: 2.5px 2.5px 2.5px black;
+  margin-left: 20px;
+}
+
+.logo a h1:hover{
+  text-shadow: 5px 5px 5px black;
 }
 
 .header-top p {

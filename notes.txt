@@ -91,3 +91,12 @@ Include something (0, -1, 1)from the annotation jbuilder for whether the user ha
 
 Hope said that annotations are fine after I fixed the 422 error 
 She also said that comments are fine 
+
+
+Explain why I use a payload system 
+Explain why my solution is the correct solution 
+
+Don't mention stuff about authentication 
+
+Say 'why rails, why react, redux' For technologies 
+One sentence, maybe two for each one 

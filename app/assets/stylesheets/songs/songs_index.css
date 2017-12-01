@@ -7,8 +7,8 @@
   display: flex;
   flex-direction: row;
   text-decoration: none;
-  color: black;
   width: 100%;
+  text-shadow: 2.5px 2.5px 2.5px #ffff64;
 }
 
 .song-index-item{
@@ -21,9 +21,15 @@
   padding-left: 10px;
 }
 
+.song-index-item a:hover{
+  color: white;
+  text-shadow: 2.5px 2.5px 2.5px black;
+}
+
 .song-index-item-title{
   font-size: 1.5em;
 }
+
 
 .songs-index{
   display: flex;
