@@ -1,24 +1,10 @@
-# README
+# Prodigy
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# An annotatable lyrics website - dedicated to unpacking the meaning behind your favorite songs
 
-Things you may want to cover:
+Prodigy is a single page web application that hosts annotatable song lyrics. Users can create new songs, annotate lyrics, comment on annotations, and vote for their favorite explanations. Prodigy uses Ruby on Rails for its backend React-Redux for its frontend.  
 
-* Ruby version
+## Features 
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Annotations 
+![alt text](https://media.giphy.com/media/l2RnHqBvcUwXLTv6U/giphy.gif)
