@@ -35,3 +35,5 @@ createLyrics(){
 
 Annotations are attached to their corresponding referent on creation. When clicked, referents fetch their annotations from the database and display them on the lyrics page. 
 ![alt](https://media.giphy.com/media/xUOxf2VE6VO03k529i/giphy.gif)
+
+To ensure that a referent's start and end indices always reference the same part of a song's lyrics, Prodigy places an invisible layer above the displayed lyrics. Referent creation uses this layer to generate proper start and end indices. After creation, a referent's anchor tag is moved above this invisible layer to allow for clickability. 
