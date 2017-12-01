@@ -52,7 +52,7 @@ class CommentForm extends React.Component{
       </form>
     </div>
       <br/>
-      <a onClick={this.handleClick}className="new-annotation-button">Create New Comment</a>
+      <a onClick={this.handleClick}className="new-comment-button">Create New Comment</a>
       <a className="back-button" onClick={() => this.props.history.push(`/songs/${this.props.match.params.songId}/${this.props.match.params.refId}`)}>&#8592;</a>
     </div>
     );
