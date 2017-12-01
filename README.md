@@ -91,7 +91,7 @@ json.array! @songs do |currentSong|
 end
 ```
 
-For our song display page, I also needed to fetch a song's corresponding referents. I met this challenge by altering the existing payload system to include referents. When Prodigy's SongDisplay component mounts, it requests the necessary song information, as well as its associated album, artist, and referents. 
+For Prodigy's song display page, I also needed to fetch a song's corresponding referents. I met this challenge by altering the existing payload system to include referents. When Prodigy's SongDisplay component mounts, it requests the necessary song information, as well as its associated album, artist, and referents. 
 
 ```ruby 
 json.set! :song do 
