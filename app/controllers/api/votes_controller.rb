@@ -48,6 +48,17 @@ class Api::VotesController < ApplicationController
     end 
   end 
 
+  def destroy
+    @vote = Vote.find_by_id(params[:id])
+    if @vote 
+      @vote.destroy
+      render :show
+    else 
+      render json: ["No such vote exists"], status: 422
+    end 
+  end 
+
+
   private 
   def vote_params
     params.require(:vote).permit(:user_id, :annotation_id, :vote_type)

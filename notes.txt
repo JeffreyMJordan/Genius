@@ -84,3 +84,6 @@ Maybe I could patch the vote?
 That messes with how my buttons are currently 
 Maybe I could change the value? 
 I think patching is the best option 
+
+
+Include something (0, -1, 1)from the annotation jbuilder for whether the user has voted on it yet 

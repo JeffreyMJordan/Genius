@@ -38,10 +38,17 @@ class AnnotationIndexItem extends React.Component{
     };
   }
 
+
   createUpvote(){
     if(this.props.currentUser.votes[this.props.annotation.id]){
+      
       if(this.props.currentUser.votes[this.props.annotation.id].vote_type === "up"){
-        return (<p className="upvote" style={{color: `#FF8B60`}}>&#8679;</p>);
+        return (<p 
+          className="upvote" 
+          style={{color: `#FF8B60`}}
+          onClick={() => this.props.deleteVote(this.props.currentUser.votes[this.props.annotation.id].id)}>
+            &#8679;
+          </p>);
       }else{
         return (<p className="upvote" onClick={this.handleVote("up")} >&#8679;</p>);
       }

@@ -4,6 +4,7 @@ class Api::SessionsController < ApplicationController
     @user = User.find_by_credentials(user_params[:username], user_params[:password])
     if @user 
       login!(@user)
+      @votes = @user.votes 
       render "api/users/show"
     else 
       render json: ["Invalid credentials"], status: 401

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :referents, only: [:create, :show, :destroy]
     resources :annotations, only: [:create, :show, :destroy]
     resources :comments, only: [:create, :show, :destroy]
-    resources :votes, only: [:create, :update]
+    resources :votes, only: [:create, :update, :destroy]
 
     get 'comment_by_annotation', to: 'comments#find_by_annotation'
     get 'votes_by_annotation', to: 'votes#find_by_annotation'

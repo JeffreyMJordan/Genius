@@ -20,3 +20,10 @@ export const updateVote = (id) => {
     url: `api/votes/${id}`
   });
 };
+
+export const deleteVote = (id) => {
+  return $.ajax({
+    method: "DELETE",
+    url: `api/votes/${id}`
+  });
+};
