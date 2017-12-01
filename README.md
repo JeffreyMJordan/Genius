@@ -72,3 +72,6 @@ On the backend, Prodigy checks to see if the submitted album and artist name are
 
 ### Comments and Voting 
 
+Users can comment and vote on annotations. Comments are displayed when a user clicks on an annotation. An annotations aggregate upvotes and downvotes are displayed next to its text content. 
+
+![alt text](https://media.giphy.com/media/xUOxfgau93tdav8sTe/giphy.gif)
