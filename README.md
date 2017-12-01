@@ -37,3 +37,9 @@ Annotations are attached to their corresponding referent on creation. When click
 ![alt](https://media.giphy.com/media/xUOxf2VE6VO03k529i/giphy.gif)
 
 To ensure that a referent's start and end indices always reference the same part of a song's lyrics, Prodigy places an invisible layer above the displayed lyrics. Referent creation uses this layer to generate proper start and end indices. After creation, a referent's anchor tag is moved above this invisible layer to allow for clickability. 
+
+### Song Creation
+
+Users can add songs to Prodigy by filling in a song's title, album, artist, and lyrics. Users can also provide an image url to be displayed as the album's thumbnail. Upon song creation, user's are redirected to the song's display page so they can immediately begin annotating. 
+
+![alt](https://media.giphy.com/media/3ohs858xCdd475QUV2/giphy.gif)
