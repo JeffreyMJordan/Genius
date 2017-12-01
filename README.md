@@ -72,7 +72,51 @@ On the backend, Prodigy checks to see if the submitted album and artist name are
   end
 ```
 
+Because Prodigy's landing page displays information from song, album, and artist objects, I used a payload system on the backend to ensure that the necessary information was always received in the state at the same time. 
 
+```ruby
+json.array! @songs do |currentSong| 
+  json.set! :song do 
+    json.partial! "api/songs/song", song: currentSong
+  end 
+  album = currentSong.album 
+  json.set! :album do 
+    json.partial! "api/albums/album", album: album
+  end 
+
+  artist = currentSong.artist
+  json.set! :artist do 
+    json.partial! "api/artists/artist", artist: artist
+  end 
+end
+```
+
+For our song display page, I also needed to fetch a song's corresponding referents. I met this challenge by altering the existing payload system to include referents. When Prodigy's SongDisplay component mounts, it requests the necessary song information, as well as its associated album, artist, and referents. 
+
+```ruby 
+json.set! :song do 
+  json.partial! "api/songs/song", song: @song
+end 
+album = @song.album 
+json.set! :album do 
+  json.partial! "api/albums/album", album: album
+end 
+
+artist = @song.artist
+json.set! :artist do 
+  json.partial! "api/artists/artist", artist: artist
+end 
+
+json.set! :referents do 
+  json.array! @song.referents do |ref|
+    json.id ref.id
+    json.start_idx ref.start_idx
+    json.end_idx ref.end_idx
+    json.song_id ref.song_id
+    json.creator_id ref.creator_id
+  end 
+end
+```
 
 ### Comments and Voting 
 
