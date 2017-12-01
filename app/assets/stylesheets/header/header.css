@@ -75,7 +75,7 @@
 }
 
 .session-list li:hover{
-  background:  rgb(184, 184, 184);
+  box-shadow: 2.5px 2.5px 2.5px black;
 }
 
 .searchbar{
