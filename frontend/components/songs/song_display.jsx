@@ -40,7 +40,7 @@ class SongDisplay extends React.Component{
             <SongDisplayHeader canDelete={true} deleteSong={this.deleteSong} song={this.props.song} album={this.props.album} artist={this.props.artist}/>
               <div className="song-display-content">
                 <div className="lyrics-container">
-                  <h1>Lyrics</h1>
+                  <h1>Lyrics (highlight to annotate)</h1>
                   <SongLyrics 
                   song={this.props.song}
                   referents={this.props.referents}
@@ -60,7 +60,7 @@ class SongDisplay extends React.Component{
             <SongDisplayHeader song={this.props.song} album={this.props.album} artist={this.props.artist}/>
               <div className="song-display-content">
                 <div className="lyrics-container">
-                  <h1>Lyrics</h1>
+                  <h1>Lyrics (highlight to annotate)</h1>
                   <SongLyrics 
                   song={this.props.song}
                   referents={this.props.referents}

@@ -56,7 +56,7 @@ class AnnotationDisplay extends React.Component{
       );
     }else{
       return (
-        <div className="fixed">
+        <div className="fixed" style={{top: this.getOffset()}}>
           <div className="fixed-content">
             <h3 className="fixed-fragment">{this.props.fragment}</h3>
             <br/>
