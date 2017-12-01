@@ -135,4 +135,10 @@ Prodigy is implemented using a model-view-controller architectural pattern.
 * React - Because I wanted Prodigy to be a single page application, React seemed like an ideal choice because of its routing and re-rendering capabilities
 * Redux - I chose to use Redux because it helps React work better with a RESTful API by ensuring that components always have access to their required information
 
-TODO: Roadmap
+## Roadmap
+* Album and Artist creation pages 
+  * Currently, the only way to create albums is when creating a song. Having independent album and artist forms seems like a logical next-step 
+* News feed
+  * Genius has a news feed above their 'Top Songs' section. Adding one would give the landing page more content, and shouldn't be very hard to do 
+* Annotation sorting by number of votes 
+* Search
