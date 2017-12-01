@@ -21,6 +21,7 @@
   display: flex; 
   justify-content: space-between;
   flex-direction: column;
+  box-shadow: 0px 2px 0px black;
 }
 
 

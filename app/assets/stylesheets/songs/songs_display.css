@@ -12,6 +12,7 @@
   margin-right: 1rem;
   position: relative;
   border: 1px solid lightgray;
+  box-shadow: 5px 5px 5px black;
 }
 
 .song-display-header ul{
@@ -22,11 +23,13 @@
 .inner-song-title{
   color: #ffff64;
   font-size: 45px;
+  text-shadow: 5px 5px 5px black;
 }
 
 .inner-artist-name{
   color: white;
   font-size: 25px;
+  text-shadow: 5px 5px 5px black;
 }
 
 .song-display-header-inner{
@@ -46,6 +49,10 @@
   padding: 10px;
   min-width: 500px;
   max-width: 500px;
+}
+
+.lyrics-container h1{
+  text-shadow: 1px 1px 1px black;
 }
 
 .lyrics-content-container{
@@ -69,6 +76,7 @@
   margin-top: 10px;
   cursor: pointer;
   padding: 3px;
+  text-shadow: 5px 5px 5px black;
 }
 
 .delete-song-button:hover{
