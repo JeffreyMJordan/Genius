@@ -10,10 +10,11 @@
   width: 130px;
   padding: 5px;
   cursor: pointer;
+  box-shadow: 2.5px 2.5px 2.5px black;
 }
 
 .new-annotation-button:hover{
-  box-shadow: 2.5px 2.5px 2.5px black;
+  box-shadow: 5px 5px 5px black;
 }
 
 .annotation-index-item{
@@ -27,7 +28,7 @@
 
 
 .annotation-delete:hover{
-  box-shadow: 2.5px 2.5px 2.5px black;
+  box-shadow: 5px 5px 5px black;
 }
 
 .annotation-delete{
@@ -37,6 +38,7 @@
   height: 17px;
   width: 47px;
   margin-bottom: 10px; 
+  box-shadow: 2.5px 2.5px 2.5px black;
 }
 
 .annotation-content{
@@ -71,8 +73,9 @@
   width: 160px;
   padding: 5px;
   cursor: pointer;
+  box-shadow: 2.5px 2.5px 2.5px black;
 }
 
 .new-comment-button:hover{
-  box-shadow: 2.5px 2.5px 2.5px black;
+  box-shadow: 5px 5px 5px black;
 }

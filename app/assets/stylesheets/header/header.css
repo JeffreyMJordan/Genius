@@ -72,10 +72,11 @@
   border: 2px solid black;
   padding: 5px;
   font-family: Programme,sans-serif;
+  box-shadow: 2.5px 2.5px 2.5px black;
 }
 
 .session-list li:hover{
-  box-shadow: 2.5px 2.5px 2.5px black;
+  box-shadow: 5px 5px 5px black;
 }
 
 .searchbar{
