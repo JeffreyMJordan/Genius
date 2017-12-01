@@ -43,3 +43,32 @@ To ensure that a referent's start and end indices always reference the same part
 Users can add songs to Prodigy by filling in a song's title, album, artist, and lyrics. Users can also provide an image url to be displayed as the album's thumbnail. Upon song creation, user's are redirected to the song's display page so they can immediately begin annotating. 
 
 ![alt](https://media.giphy.com/media/3ohs858xCdd475QUV2/giphy.gif)
+
+On the backend, Prodigy checks to see if the submitted album and artist name are already in its database. If they already exist, Prodigy associates the song with the corresponding album and artist. If the database doesn't contain the album and artist, Prodigy automatically creates these objects for the user. 
+
+```ruby
+  def album_name=(album)
+    @album_name = Album.find_by_title(album) 
+    if @album_name
+      self.album_id = @album_name.id 
+    else 
+      new_album = Album.new({title: album, artist_id: self.artist_id, image_url: @album_image_URL})
+      new_album.save 
+      self.album_id = Album.last.id
+    end 
+  end
+
+  def artist_name=(artist)
+    @artist_name = Artist.find_by_name(artist)
+    if @artist_name
+      self.artist_id = @artist_name.id 
+    else 
+      new_artist = Artist.new({name: artist})
+      new_artist.save
+      self.artist_id = Artist.last.id
+    end 
+  end
+```
+
+### Comments and Voting 
+
