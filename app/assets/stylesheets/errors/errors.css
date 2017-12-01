@@ -1,4 +1,6 @@
 .errors{
   color: red;
   margin-top: 10px;
+  position: relative;
+  right: 20px;
 }
