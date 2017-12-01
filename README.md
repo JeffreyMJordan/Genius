@@ -127,3 +127,13 @@ Users can comment and vote on annotations. Comments are displayed when a user cl
 ### Authentication and Security 
 
 To protect its users, Prodigy hashes and salts passwords using BCrypt, then stores the hashed result in its database rather than the plaintext password. This protects users' information even in the event of a database breach. 
+
+## Technologies 
+Prodigy is implemented using a model-view-controller architectural pattern. 
+
+### Backend 
+* Ruby on Rails 
+
+### Frontend 
+* React 
+* Redux
