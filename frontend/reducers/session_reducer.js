@@ -1,7 +1,7 @@
 import {merge} from "lodash";
 
 import {RECEIVE_CURRENT_USER} from '../actions/session_actions';
-import {RECEIVE_VOTE, RECEIVE_UPDATED_VOTE, RECEIVE_VOTES} from '../actions/vote_actions';
+import {RECEIVE_VOTE, RECEIVE_UPDATED_VOTE, RECEIVE_VOTES, REMOVE_VOTE} from '../actions/vote_actions';
 
 const _nullUser = {
   currentUser: {id: null, username: null, votes: {}}
@@ -33,6 +33,11 @@ export default (state=_nullUser, action) => {
     //     votesState["currentUser"]["votes"][action.votes[0].annotation_id] = action.votesPayload.votes;
     //   }
     //   return votesState;
+    case REMOVE_VOTE:
+      let removeState = merge({}, state);
+      removeState["currentUser"]["votes"][action.vote.annotation_id] = undefined;
+      return removeState;  
+
     default: 
       return state;
   }

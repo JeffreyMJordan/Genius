@@ -63,7 +63,9 @@ class AnnotationIndexItem extends React.Component{
   createDownvote(){
     if(this.props.currentUser.votes[this.props.annotation.id]){
       if(this.props.currentUser.votes[this.props.annotation.id].vote_type === "down"){
-        return (<p className="downvote" style={{color: `#9494FF`}} >&#8681;</p>);
+        return (<p className="downvote" 
+        style={{color: `#9494FF`}} 
+        onClick={() => this.props.deleteVote(this.props.currentUser.votes[this.props.annotation.id].id)}>&#8681;</p>);
       }else{
         return (<p className="downvote" onClick={this.handleVote("down")}>&#8681;</p>);
       }

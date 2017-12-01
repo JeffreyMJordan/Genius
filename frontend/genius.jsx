@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let store = undefined;
 
   if(window.currentUser){
-    window.currentUser["votes"] = {};
+    
     const preloadedState = {session: {currentUser: window.currentUser} };
     store = configureStore(preloadedState);
   }else{

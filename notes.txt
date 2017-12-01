@@ -87,3 +87,7 @@ I think patching is the best option
 
 
 Include something (0, -1, 1)from the annotation jbuilder for whether the user has voted on it yet 
+
+
+Hope said that annotations are fine after I fixed the 422 error 
+She also said that comments are fine 
