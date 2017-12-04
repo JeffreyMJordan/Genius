@@ -1,5 +1,6 @@
 import React from "react"; 
 import SongIndexItem from "./song_index_item";
+import SongIndexHeader from './index_header';
 
 class SongsIndex extends React.Component{
   constructor(props){
@@ -13,7 +14,12 @@ class SongsIndex extends React.Component{
   render(){
     const songs = this.props.songs;
     return (
+      <div className="master-index">
+
+      
+      <SongIndexHeader/>
       <div className="songs-index">
+        
         <ul>
           <li>
             <div className="songs-index-header">
@@ -27,6 +33,7 @@ class SongsIndex extends React.Component{
           album={this.props.albums[song.album_id]}/>)}
         </ul>
         
+      </div>
       </div>
     );
   }
