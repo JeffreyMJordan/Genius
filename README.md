@@ -72,7 +72,7 @@ On the backend, Prodigy checks to see if the submitted album and artist name are
   end
 ```
 
-Because Prodigy's landing page displays information from song, album, and artist objects, I used a payload system on the backend to ensure that the necessary information was always received in the state at the same time. 
+Because Prodigy's landing page displays information from song, album, and artist objects, I used a payload system on the backend to ensure that the necessary information was always received in the state at the same time. This method was more efficient than making multiple requests, and also ensured that my React Components were easier to manage. 
 
 ```ruby
 json.array! @songs do |currentSong| 
@@ -91,7 +91,7 @@ json.array! @songs do |currentSong|
 end
 ```
 
-For Prodigy's song display page, I also needed to fetch a song's corresponding referents. I met this challenge by altering the existing payload system to include referents. When Prodigy's SongDisplay component mounts, it requests the necessary song information, as well as its associated album, artist, and referents. 
+For Prodigy's song display page, I also needed to fetch a song's corresponding referents. I met this challenge by altering the existing payload system to include referents. When Prodigy's SongDisplay component mounts, it requests the necessary song information, as well as its associated album, artist, and referents. Because only my song display component needed referents, I had it request them after mounting to ensure that Prodigy's application state did not get too cluttered. 
 
 ```ruby 
 json.set! :song do 
@@ -124,16 +124,21 @@ Users can comment and vote on annotations. Comments are displayed when a user cl
 
 ![alt text](https://media.giphy.com/media/xUOxfgau93tdav8sTe/giphy.gif)
 
-### Authentication and Security 
-
-To protect its users, Prodigy hashes and salts passwords using BCrypt, then stores the hashed result in its database rather than the plaintext password. This protects users' information even in the event of a database breach. 
 
 ## Technologies 
 Prodigy is implemented using a model-view-controller architectural pattern. 
 
 ### Backend 
-* Ruby on Rails 
+* Ruby on Rails - Prodigy had a total development time of less than two weeks. Because of this quick turnaround, I chose to use Ruby on Rails for its ease of use and faster production speed. 
 
 ### Frontend 
-* React 
-* Redux
+* React - Because I wanted Prodigy to be a single page application, React seemed like an ideal choice because of its routing and re-rendering capabilities
+* Redux - I chose to use Redux because it helps React work better with a RESTful API by ensuring that components always have access to their required information
+
+## Roadmap
+* Album and Artist creation pages 
+  * Currently, the only way to create albums is when creating a song. Having independent album and artist forms seems like a logical next-step 
+* News feed
+  * Genius has a news feed above their 'Top Songs' section. Adding one would give the landing page more content, and shouldn't be very hard to do 
+* Annotation sorting by number of votes 
+* Search
