@@ -15,6 +15,7 @@ export default (state=_nullUser, action) => {
       if (newState["currentUser"]["votes"]===undefined){
         newState["currentUser"]["votes"] = {};
       }
+      
       return newState;
 
     case RECEIVE_VOTE:
