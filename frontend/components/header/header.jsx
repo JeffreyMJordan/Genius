@@ -27,14 +27,13 @@ class Header extends React.Component{
 
         <section className="header-bottom">
           <ul>
-            <li>FEATURED STORIES</li>
             <li>TOP SONGS</li>
-            <li>VIDEOS</li>
-            <li>COMMUNITY</li>
-            <li> | </li>
-            <li>SHOP</li>
+            <li>TOP ALBUMS</li>
+            <li>TOP ARTISTS</li>
             <li> | </li>
             <li><Link to="/new/song">NEW SONG</Link></li>
+            <li> | </li>
+            <li><a href="https://github.com/JeffreyMJordan">PRODIGY'S CREATOR</a></li>
             <li> | </li>
           </ul>
         </section>
@@ -60,13 +59,12 @@ class Header extends React.Component{
           </div>
           <section className="header-bottom">
           <ul>
-            <li>FEATURED STORIES</li>
-            <li>TOP SONGS</li>
-            <li>VIDEOS</li>
-            <li>COMMUNITY</li>
-            <li> | </li>
-            <li>SHOP</li>
-            <li> | </li>
+          <li>TOP SONGS</li>
+          <li>TOP ALBUMS</li>
+          <li>TOP ARTISTS</li>
+          <li> | </li>
+            <li><a href="https://github.com/JeffreyMJordan">PRODIGY'S CREATOR</a></li>
+          <li> | </li>
           </ul>
         </section>
           
