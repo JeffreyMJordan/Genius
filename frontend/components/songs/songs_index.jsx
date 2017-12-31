@@ -1,6 +1,7 @@
 import React from "react"; 
 import SongIndexItem from "./song_index_item";
 import SongIndexHeader from './index_header';
+import {Route} from "react-router-dom";
 
 class SongsIndex extends React.Component{
   constructor(props){
@@ -17,7 +18,7 @@ class SongsIndex extends React.Component{
       <div className="master-index">
 
       
-      <SongIndexHeader/>
+      <Route exact path="/" component={SongIndexHeader}/>
       <div className="songs-index">
         
         <ul>

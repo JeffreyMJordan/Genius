@@ -27,7 +27,7 @@ class Header extends React.Component{
 
         <section className="header-bottom">
           <ul>
-            <li>TOP SONGS</li>
+            <li><Link to="/top/songs">TOP SONGS</Link></li>
             <li>TOP ALBUMS</li>
             <li>TOP ARTISTS</li>
             <li> | </li>
@@ -59,7 +59,7 @@ class Header extends React.Component{
           </div>
           <section className="header-bottom">
           <ul>
-          <li>TOP SONGS</li>
+          <li><Link to="/top/songs">TOP SONGS</Link></li>
           <li>TOP ALBUMS</li>
           <li>TOP ARTISTS</li>
           <li> | </li>

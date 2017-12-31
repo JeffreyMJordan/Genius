@@ -20,6 +20,7 @@ const App = () => (
   
   <Route path="/songs/:songId" component={SongDisplayContainer}/>
   <Route exact path="/" component={SongsIndexContainer}/>
+  <Route exact path="/top/songs" component={SongsIndexContainer}/>
   <LoggedInRoute path="/new/song" component={SongFormContainer}/>
 
   {/* Try defining these routes inside the component I want it to render inside  */}
