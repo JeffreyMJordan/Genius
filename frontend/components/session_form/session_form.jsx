@@ -39,7 +39,7 @@ class SessionForm extends React.Component{
   }
 
   render(){
-    let text = this.props.formType==="login"? "Sign in to Genius" : "Sign up for Genius";
+    let text = this.props.formType==="login"? "Sign In to Prodigy" : "Sign Up for Prodigy";
     let toggleText = this.props.formType==="login"? "Don't have an account? " : "Already have an account? ";
     let linkText = this.props.formType==="login"? "/signup" : "/login";
     let buttonText = this.props.formType==="login"? "Sign In" : "Sign Up";
