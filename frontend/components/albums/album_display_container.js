@@ -9,7 +9,8 @@ import { fetchSongsByAlbumId } from '../../actions/song_actions';
 const getSongs = (albumId, songs) => {
   let res = [];
   values(songs).forEach((song) => {
-    if(song.album_id ===albumId){
+    console.log(song)
+    if(song.album_id ===parseInt(albumId)){
       res.push(song);
     }
   });

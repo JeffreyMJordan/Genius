@@ -1,6 +1,6 @@
 import React from "react";
 import AlbumDisplayHeader from './album_display_header';
-// import AlbumDisplayIndex from './album_display_index';
+import AlbumDisplayIndex from './album_display_index';
 
 class AlbumDisplay extends React.Component{
   constructor(props){
@@ -13,10 +13,12 @@ class AlbumDisplay extends React.Component{
   }
 
   render(){
+    console.log(this.props.songs);
     if (this.props.album){
       return (
         <div>
           <AlbumDisplayHeader album={this.props.album}/>
+          <AlbumDisplayIndex album={this.props.album} songs={this.props.songs}/>
         </div>
       );
     }else{
