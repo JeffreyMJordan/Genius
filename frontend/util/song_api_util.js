@@ -5,6 +5,14 @@ export const fetchSongs = () => {
   });
 };
 
+export const fetchSongsByAlbumId = (id) => {
+  return $.ajax({
+    method: "GET", 
+    url: "api/songs_by_album",
+    data: {id: id}
+  });
+};
+
 export const fetchSong = (id) => {
   return $.ajax({
     method: "GET",

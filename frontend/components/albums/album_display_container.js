@@ -3,6 +3,7 @@ import {fetchAlbum} from '../../actions/album_actions';
 import AlbumDisplay from './album_display';
 import {withRouter} from 'react-router-dom';
 import {values} from 'lodash';
+import { fetchSongsByAlbumId } from '../../actions/song_actions';
 
 
 const getSongs = (albumId, songs) => {
@@ -28,7 +29,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchAlbum: (id) => dispatch(fetchAlbum(id))
+    fetchAlbum: (id) => dispatch(fetchAlbum(id)),
+    fetchSongsByAlbumId: (id) => dispatch(fetchSongsByAlbumId(id))
   };
 };
 

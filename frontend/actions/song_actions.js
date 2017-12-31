@@ -51,6 +51,11 @@ export const fetchSongs = () => (dispatch) => {
     (errors) => dispatch(receiveSongErrors(errors.responseJSON)));
 };
 
+export const fetchSongsByAlbumId = (id) => (dispatch) => {
+  return SongAPIUtil.fetchSongsByAlbumId(id)
+    .then((songs) => dispatch(receiveSongs(songs)));
+};
+
 export const fetchSong = (id) => (dispatch) => {
   return SongAPIUtil.fetchSong(id)
     .then((song) => dispatch(receiveSong(song)),
