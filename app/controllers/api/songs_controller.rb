@@ -36,7 +36,9 @@ class Api::SongsController < ApplicationController
     else 
       render json: ["That song doesn't exist"], status: 422
     end
-  end 
+  end
+  
+  
 
   private 
   def song_params 

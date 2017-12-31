@@ -11,7 +11,6 @@ class AlbumsIndex extends React.Component{
   }
 
   render(){
-    console.log(this.props.albums)
     return (
       <div className="songs-index">
         <ul>
