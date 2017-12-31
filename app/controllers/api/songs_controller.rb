@@ -38,6 +38,11 @@ class Api::SongsController < ApplicationController
     end
   end
   
+  def by_album
+    @album = Album.find_by_id(params[:id])
+    @songs = @album.songs
+    render :index
+  end
   
 
   private 

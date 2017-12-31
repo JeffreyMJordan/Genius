@@ -8,7 +8,8 @@ class AlbumDisplay extends React.Component{
   }
 
   componentDidMount(){
-    this.props.fetchAlbum(this.props.albumId);
+    this.props.fetchAlbum(this.props.albumId)
+    // .then((res) => this.props.fetchSongsByAlbumId(this.props.albumId);
   }
 
   render(){

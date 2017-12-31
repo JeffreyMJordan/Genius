@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     get 'annotations_by_referent', to: 'annotations#by_referent'
     get 'payloads', to: 'payloads#send_payloads'
     get 'payloads/songs', to: 'payloads#send_payload_by_song_id'
+    get 'songs_by_album', to: 'songs#by_album'
   end
 
   
