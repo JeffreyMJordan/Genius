@@ -60,8 +60,8 @@ class Header extends React.Component{
           <section className="header-bottom">
           <ul>
           <li><Link to="/top/songs">TOP SONGS</Link></li>
-          <li>TOP ALBUMS</li>
-          <li>TOP ARTISTS</li>
+          <li><Link to="/top/albums">TOP ALBUMS</Link></li>
+          <li><Link to="/top/artists">TOP ARTISTS</Link></li>
           <li> | </li>
             <li><a href="https://github.com/JeffreyMJordan">PRODIGY'S CREATOR</a></li>
           <li> | </li>

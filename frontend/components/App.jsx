@@ -2,6 +2,8 @@ import React from "react";
 import HeaderContainer from './header/header_container';
 import SessionFormContainer from './session_form/session_form_container';
 import SongsIndexContainer from './songs/songs_index_container';
+import AlbumsIndexContainer from './albums/albums_index_container';
+
 import {Route} from "react-router-dom";
 import {AuthRoute, LoggedInRoute} from "../util/route_util";
 import SongDisplayContainer from "./songs/song_display_container";
@@ -21,6 +23,8 @@ const App = () => (
   <Route path="/songs/:songId" component={SongDisplayContainer}/>
   <Route exact path="/" component={SongsIndexContainer}/>
   <Route exact path="/top/songs" component={SongsIndexContainer}/>
+  <Route exact path="/top/albums" component={AlbumsIndexContainer}/>
+  <Route exact path="/top/artists" component={SongsIndexContainer}/>
   <LoggedInRoute path="/new/song" component={SongFormContainer}/>
 
   {/* Try defining these routes inside the component I want it to render inside  */}
