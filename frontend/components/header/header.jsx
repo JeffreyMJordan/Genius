@@ -11,9 +11,9 @@ class Header extends React.Component{
       return (
         <div className="header">
         <div className="header-top">
-          <div className="searchbar">
+          {/* <div className="searchbar">
             <input type="text" defaultValue="Search lyrics and more"/>
-          </div>
+          </div> */}
           <div className="logo">
             <Link to="/"><h1>Prodigy</h1></Link>
           </div>
@@ -45,9 +45,9 @@ class Header extends React.Component{
         <div className="header">
         <div className="header-top">
 
-          <div className="searchbar-div">
+          {/* <div className="searchbar-div">
             <input className="searchbar" type="text" defaultValue="Search lyrics and more"/>
-          </div>
+          </div> */}
 
           <div className="logo">
             <Link to="/"><h1>Prodigy</h1></Link>

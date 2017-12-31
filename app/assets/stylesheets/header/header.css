@@ -3,7 +3,7 @@
   display: flex;
   font-family: Inconsolata,sans-serif;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   height: 41px;
   width: 100%;
 }
@@ -46,6 +46,10 @@
   cursor: pointer;
 }
 
+  .logo{
+    margin-left: 39%;
+    margin-right: 25%;
+  }
 
 .logo a{
   position: center;
