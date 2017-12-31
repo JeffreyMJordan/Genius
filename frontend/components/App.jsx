@@ -3,7 +3,7 @@ import HeaderContainer from './header/header_container';
 import SessionFormContainer from './session_form/session_form_container';
 import SongsIndexContainer from './songs/songs_index_container';
 import AlbumsIndexContainer from './albums/albums_index_container';
-
+import AlbumDisplayContainer from './albums/album_display_container';
 import {Route} from "react-router-dom";
 import {AuthRoute, LoggedInRoute} from "../util/route_util";
 import SongDisplayContainer from "./songs/song_display_container";
@@ -21,6 +21,7 @@ const App = () => (
     <HeaderContainer />
   
   <Route path="/songs/:songId" component={SongDisplayContainer}/>
+  <Route path="/albums/:albumId" component={AlbumDisplayContainer}/>
   <Route exact path="/" component={SongsIndexContainer}/>
   <Route exact path="/top/songs" component={SongsIndexContainer}/>
   <Route exact path="/top/albums" component={AlbumsIndexContainer}/>
