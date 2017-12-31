@@ -1,10 +1,11 @@
 import AlbumsIndex from './albums_index';
 import {connect} from 'react-redux';
 import {fetchAlbums} from '../../actions/album_actions';
+import {values} from "lodash";
 
 const mapStateToProps = (state) => {
   return {
-    albums: state.albums
+    albums: values(state.albums)
   };
 };
 

@@ -1,14 +1,30 @@
 import React from "react";
+import AlbumIndexItem from './album_index_item';
 
 class AlbumsIndex extends React.Component{
   constructor(props){
     super(props);
   }
 
+  componentDidMount(){
+    this.props.fetchAlbums();
+  }
+
   render(){
+    console.log(this.props.albums)
     return (
-      <div className="albums-index">
-        <h1>It's working</h1>
+      <div className="songs-index">
+        <ul>
+          <li>
+            <div className="songs-index-header">
+              <h3>Top Albums</h3>
+            </div>
+          </li>
+          {this.props.albums.map((album) => <AlbumIndexItem 
+            key={album.id}
+            album={album}
+          />)}
+        </ul>
       </div>
     );
   }
