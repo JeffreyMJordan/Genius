@@ -50,10 +50,6 @@
   margin-bottom: 10px;
 }
 
-.annotation-body:hover{
-  text-shadow: 1.5px 1.5px 1.5px black;
-  color: white;
-}
 
 .annotation-body{
   height: 100%;
