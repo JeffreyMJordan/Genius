@@ -105,7 +105,7 @@ class AnnotationIndexItem extends React.Component{
         </div>
         <div className="button-container">
         {deleteButton}
-        <a className="annotation-delete" onClick={this.showComments}>View Comments</a>
+        <a className="view-comments" onClick={this.showComments}>View Comments</a>
         </div>
         
       </li>
