@@ -23,7 +23,7 @@ class Api::SongsController < ApplicationController
     render :index
   end
 
-  def show
+  def show 
     @song = Song.find_by_id(params[:id])
     render :show
   end 
@@ -32,6 +32,11 @@ class Api::SongsController < ApplicationController
     @song = Song.find_by_id(params[:id])
     if @song 
       @song.destroy
+      Album.all.each do |album| 
+        if album.songs.length == 0 
+          album.delete
+        end 
+      end
       render :show
     else 
       render json: ["That song doesn't exist"], status: 422
