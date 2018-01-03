@@ -79,3 +79,10 @@
 .new-comment-button:hover{
   box-shadow: 5px 5px 5px black;
 }
+
+.button-container{
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+  width: 50%;
+}

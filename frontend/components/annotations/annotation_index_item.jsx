@@ -103,8 +103,11 @@ class AnnotationIndexItem extends React.Component{
           {this.createDownvote()}
           </div>
         </div>
-        
+        <div className="button-container">
         {deleteButton}
+        <a className="annotation-delete" onClick={this.showComments}>View Comments</a>
+        </div>
+        
       </li>
     );
   }
