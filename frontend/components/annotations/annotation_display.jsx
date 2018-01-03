@@ -39,7 +39,7 @@ class AnnotationDisplay extends React.Component{
         <div className="fixed" style={{top: this.getOffset()}}>
           <div className="fixed-content">
             <h3 className="fixed-fragment">{this.props.fragment}</h3>
-            <h3 className="bottom-line">Annotations (click to see comments)</h3>
+            <h3 className="bottom-line">Annotations</h3>
             <ul>
               {/* render a container everyhwere I want to render an index item */}
               {/* use ownProps to give it the annotation id */}

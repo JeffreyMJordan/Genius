@@ -93,7 +93,7 @@ class AnnotationIndexItem extends React.Component{
       <li className="annotation-index-item">
         <p className="username">{username}</p>
         
-        <div className="annotation-content"><a className="annotation-body">{body}</a>
+        <div className="annotation-content"><div className="annotation-body">{body}</div>
         <div className="votes-container"> 
            {/* Upvote button */}
           {this.createUpvote()}
