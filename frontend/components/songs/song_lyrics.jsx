@@ -11,6 +11,8 @@ class SongLyrics extends React.Component{
     this.createLyrics = this.createLyrics.bind(this);
     this.createIdxRefs = this.createIdxRefs.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.clickedEl = undefined
+    this.resetClicked = this.resetClicked.bind(this);
   } 
 
 
@@ -41,11 +43,19 @@ class SongLyrics extends React.Component{
     return {startIdxRefs, endIdxRefs};
   }
 
+  resetClicked(){
+    if (this.clickedEl){
+      this.clickedEl.id = "";
+    }
+  }
+
   handleClick(id){
     return (e) => {
       console.log(e.target.id);
       e.target.id = "clicked";
       console.log(e.target.id);
+      this.resetClicked();
+      this.clickedEl = e.target;
       let last = this.props.history.last;
       this.props.history.push(`/songs/${this.props.match.params.songId}/${id}`);
     };
