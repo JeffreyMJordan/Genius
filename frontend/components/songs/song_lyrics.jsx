@@ -42,7 +42,10 @@ class SongLyrics extends React.Component{
   }
 
   handleClick(id){
-    return () => {
+    return (e) => {
+      console.log(e.target.id);
+      e.target.id = "clicked";
+      console.log(e.target.id);
       let last = this.props.history.last;
       this.props.history.push(`/songs/${this.props.match.params.songId}/${id}`);
     };
