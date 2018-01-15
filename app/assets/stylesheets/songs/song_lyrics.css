@@ -18,6 +18,13 @@
   background: #ffff64;;
 }
 
+#clicked{
+  background: #83ff64;
+  cursor: pointer;
+  z-index: 4;
+  position: relative;
+}
+
 .lyrics a:hover{
   background: lightgrey;
 }
