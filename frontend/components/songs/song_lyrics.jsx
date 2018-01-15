@@ -26,6 +26,7 @@ class SongLyrics extends React.Component{
     if(startIdx!=endIdx){
       this.props.history.push(`/songs/${this.props.match.params.songId}/create/${startIdx}/${endIdx}`);
     }else{
+      this.resetClicked();
       this.props.history.push(`/songs/${this.props.match.params.songId}`);
     }
   }
